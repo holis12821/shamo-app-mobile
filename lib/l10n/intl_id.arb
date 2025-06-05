@@ -1,4 +1,32 @@
 {
     "@@locale": "id",
-    "login": "Login"
+    "login": "Login",
+    "@login": {
+       "description": "Title Login",
+       "type": "text"
+    },
+    "sign_in_to_continue": "Daftar untuk Masuk",
+    "@sign_in_to_continue": {
+        "description": "Subtitle dibawah title Login"
+    },
+    "email_address": "Alamat Email",
+    "@email_address":{ 
+        "description": "Label untuk form email"
+    },
+    "password": "Password",
+    "@password": {
+        "description": "Label untuk form Password"
+    },
+    "hint_email_address": "Alamat Email Anda",
+    "@hint_email_address": {
+        "description": "Hint label untuk form email"
+    },
+    "hint_password": "Kata Sandi Anda",
+    "@hint_password": {
+        "description": "Hint label untuk form password"
+    },
+    "txt_button_sign_in": "Masuk",
+    "@txt_button_sign_in": {
+        "description": "Text button untuk login"
+    }
 }

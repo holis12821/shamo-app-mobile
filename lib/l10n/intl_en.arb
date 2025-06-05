@@ -1,4 +1,10 @@
 {
     "@@locale": "en",
-    "login": "Login"
+    "login": "Login",
+    "sign_in_to_continue": "Sign In to Continue",
+    "email_address": "Email Address",
+    "password": "Password",
+    "hint_email_address": "Your Email Address",
+    "hint_password": "Your Password",
+    "txt_button_sign_in": "Sign In"
 }

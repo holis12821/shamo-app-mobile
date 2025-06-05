@@ -17,6 +17,10 @@ class CustomTextTheme {
 
   static var priceTextStyle = GoogleFonts.poppins(color: CustomAppTheme.kDodgerBlue);
 
+  static var subtitleTextStyle = GoogleFonts.poppins(
+    color: CustomAppTheme.kDavysGray,
+  );
+
   static var light = FontWeight.w300;
   static var regular = FontWeight.w400;
   static var medium = FontWeight.w500;
