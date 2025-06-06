@@ -6,5 +6,7 @@
     "password": "Password",
     "hint_email_address": "Your Email Address",
     "hint_password": "Your Password",
-    "txt_button_sign_in": "Sign In"
+    "txt_button_sign_in": "Sign In",
+    "txt_footer": "Don't have an account? ",
+    "txt_sign_up": "Sign up"
 }

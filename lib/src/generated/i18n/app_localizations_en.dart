@@ -28,4 +28,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get txt_button_sign_in => 'Sign In';
+
+  @override
+  String get txt_footer => 'Don\'t have an account? ';
+
+  @override
+  String get txt_sign_up => 'Sign up';
 }

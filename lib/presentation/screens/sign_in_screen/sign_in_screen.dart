@@ -31,6 +31,8 @@ class SignInScreen extends StatelessWidget {
               inputEmailFormComponent(localizations),
               inputPasswordFormComponent(localizations),
               signInButton(localizations.txt_button_sign_in),
+              const Spacer(),
+              footer(localizations),
             ],
           ),
         ),
@@ -49,6 +51,30 @@ class SignInScreen extends StatelessWidget {
           fontSize: 24,
           fontWeight: CustomTextTheme.semiBold,
         ),
+      ),
+    );
+  }
+
+  Widget footer(AppLocalizations localizations) {
+    return Container(
+      margin: EdgeInsets.only(bottom: CustomAppDimensions.defaultMargin),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            localizations.txt_footer,
+            style: CustomTextTheme.subtitleTextStyle.copyWith(
+              fontSize: CustomAppDimensions.sizeLarge,
+            ),
+          ),
+          Text(
+            localizations.txt_sign_up,
+            style: CustomTextTheme.purpleTextStyle.copyWith(
+              fontSize: CustomAppDimensions.sizeLarge,
+              fontWeight: CustomTextTheme.medium,
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -171,9 +197,8 @@ class SignInScreen extends StatelessWidget {
         child: Text(
           textButton,
           style: CustomTextTheme.primaryTextStyle.copyWith(
-            fontSize: CustomAppDimensions.sizeLarge,
-            fontWeight: CustomTextTheme.medium
-          ),
+              fontSize: CustomAppDimensions.sizeLarge,
+              fontWeight: CustomTextTheme.medium),
         ),
       ),
     );

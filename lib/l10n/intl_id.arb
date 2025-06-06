@@ -28,5 +28,13 @@
     "txt_button_sign_in": "Masuk",
     "@txt_button_sign_in": {
         "description": "Text button untuk login"
+    },
+    "txt_footer": "Tidak memiliki akun? ",
+    "@txt_footer": {
+        "description": "Text untuk footer belum memiliki akun"
+    },
+    "txt_sign_up": "Daftar",
+    "@txt_sign_up": {
+        "description": "Label untuk daftar"
     }
 }

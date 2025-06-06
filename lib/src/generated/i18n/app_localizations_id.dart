@@ -28,4 +28,10 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get txt_button_sign_in => 'Masuk';
+
+  @override
+  String get txt_footer => 'Tidak memiliki akun? ';
+
+  @override
+  String get txt_sign_up => 'Daftar';
 }

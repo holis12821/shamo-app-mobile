@@ -139,6 +139,18 @@ abstract class AppLocalizations {
   /// In id, this message translates to:
   /// **'Masuk'**
   String get txt_button_sign_in;
+
+  /// Text untuk footer belum memiliki akun
+  ///
+  /// In id, this message translates to:
+  /// **'Tidak memiliki akun? '**
+  String get txt_footer;
+
+  /// Label untuk daftar
+  ///
+  /// In id, this message translates to:
+  /// **'Daftar'**
+  String get txt_sign_up;
 }
 
 class _AppLocalizationsDelegate

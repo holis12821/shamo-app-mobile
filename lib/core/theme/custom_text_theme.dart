@@ -21,6 +21,10 @@ class CustomTextTheme {
     color: CustomAppTheme.kDavysGray,
   );
 
+  static var purpleTextStyle = GoogleFonts.poppins(
+    color: CustomAppTheme.kPrimaryColor 
+  );
+
   static var light = FontWeight.w300;
   static var regular = FontWeight.w400;
   static var medium = FontWeight.w500;

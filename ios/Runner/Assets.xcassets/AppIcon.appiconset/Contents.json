@@ -1,17 +1,19 @@
 {
   "images" : [
     {
-      "filename" : "nike-logo-40x40.jpeg",
+      "filename" : "Icon-App-20x20@2x.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
+      "filename" : "Icon-App-20x20@3x.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "20x20"
     },
     {
+      "filename" : "Icon-App-29x29@1x.png",
       "idiom" : "iphone",
       "scale" : "1x",
       "size" : "29x29"
@@ -22,7 +24,6 @@
       "size" : "29x29"
     },
     {
-      "filename" : "nike-logo-87x87.jpeg",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "29x29"
@@ -38,11 +39,13 @@
       "size" : "40x40"
     },
     {
+      "filename" : "gif-nike-seeklogo-120x120@2x.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x60"
     },
     {
+      "filename" : "gif-nike-seeklogo-180x180@3x.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "60x60"
