@@ -4,9 +4,15 @@
     "sign_in_to_continue": "Sign In to Continue",
     "email_address": "Email Address",
     "password": "Password",
-    "hint_email_address": "Your Email Address",
+    "hint_email_address": "Your Email Address ",
     "hint_password": "Your Password",
-    "txt_button_sign_in": "Sign In",
+    "txt_sign_in": "Sign In",
     "txt_footer": "Don't have an account? ",
-    "txt_sign_up": "Sign up"
+    "txt_sign_up": "Sign up",
+    "register_and_happy_shopping": "Register and Happy Shoping",
+    "full_name": "Full Name",
+    "hint_full_name": "Your Full Name",
+    "username": "Username",
+    "hint_username": "Your Username",
+    "txt_footer_already_have_account": "Already have an account? "
 }

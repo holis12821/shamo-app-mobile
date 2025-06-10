@@ -8,70 +8,82 @@ import 'package:shamoapps/core/theme/custom_text_theme.dart';
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    var localizations = AppLocalizations.of(context)!;
+@override
+Widget build(BuildContext context) {
+  final localizations = AppLocalizations.of(context)!;
 
-    return Scaffold(
-      backgroundColor: CustomAppTheme.kRaisinPrimaryColor,
-      body: SafeArea(
-        child: Container(
-          margin: EdgeInsets.symmetric(
-            horizontal: CustomAppDimensions.defaultMargin,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              header(localizations.login),
-              const SizedBox(height: 2),
-              Text(
-                localizations.sign_in_to_continue,
-                style: CustomTextTheme.subtitleTextStyle,
+  return Scaffold(
+    resizeToAvoidBottomInset: true,
+    backgroundColor: CustomAppTheme.kRaisinPrimaryColor,
+    body: SafeArea(
+      child: Container(
+        margin: const EdgeInsets.symmetric(
+          horizontal: CustomAppDimensions.kSize30,
+        ),
+        child: Column(
+          children: [
+            Expanded(
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.only(bottom: CustomAppDimensions.kSize20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    header(localizations.login),
+                   const SizedBox(height: CustomAppDimensions.kSizeSuperSmall),
+                    Text(
+                      localizations.sign_in_to_continue,
+                      style: CustomTextTheme.subtitleTextStyle,
+                    ),
+                    inputEmailFormComponent(localizations),
+                    inputPasswordFormComponent(localizations),
+                    signInButton(context, localizations.txt_sign_in),
+                  ],
+                ),
               ),
-              inputEmailFormComponent(localizations),
-              inputPasswordFormComponent(localizations),
-              signInButton(localizations.txt_button_sign_in),
-              const Spacer(),
-              footer(localizations),
-            ],
-          ),
+            ),
+            footer(context, localizations), // Always appears, but can scroll when landscape
+          ],
         ),
       ),
-    );
-  }
+    ),
+  );
+}
 
   Widget header(String title) {
     return Container(
-      margin: EdgeInsets.only(
-        top: CustomAppDimensions.defaultMargin,
+      margin: const EdgeInsets.only(
+        top: CustomAppDimensions.kSize30,
       ),
       child: Text(
         title,
         style: CustomTextTheme.primaryTextStyle.copyWith(
-          fontSize: 24,
+          fontSize: CustomAppDimensions.kSizeSuperLarge,
           fontWeight: CustomTextTheme.semiBold,
         ),
       ),
     );
   }
 
-  Widget footer(AppLocalizations localizations) {
+  Widget footer(BuildContext context, AppLocalizations localizations) {
     return Container(
-      margin: EdgeInsets.only(bottom: CustomAppDimensions.defaultMargin),
+      margin: const EdgeInsets.only(bottom: CustomAppDimensions.kSize30),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             localizations.txt_footer,
             style: CustomTextTheme.subtitleTextStyle.copyWith(
-              fontSize: CustomAppDimensions.sizeLarge,
+              fontSize: CustomAppDimensions.kSizeSmall,
             ),
           ),
-          Text(
-            localizations.txt_sign_up,
-            style: CustomTextTheme.purpleTextStyle.copyWith(
-              fontSize: CustomAppDimensions.sizeLarge,
-              fontWeight: CustomTextTheme.medium,
+          GestureDetector(
+            onTap: () => Navigator.pushNamed(context, '/sign-up'),
+            child: Text(
+              localizations.txt_sign_up,
+              style: CustomTextTheme.purpleTextStyle.copyWith(
+                fontSize: CustomAppDimensions.kSizeSmall,
+                fontWeight: CustomTextTheme.medium,
+              ),
             ),
           ),
         ],
@@ -81,35 +93,38 @@ class SignInScreen extends StatelessWidget {
 
   Widget inputEmailFormComponent(AppLocalizations localizations) {
     return Container(
-      margin: EdgeInsets.only(top: CustomAppDimensions.margin70),
+      margin: const EdgeInsets.only(top: CustomAppDimensions.kSize70),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             localizations.email_address,
             style: CustomTextTheme.primaryTextStyle.copyWith(
-              fontSize: CustomAppDimensions.sizeLarge,
+              fontSize: CustomAppDimensions.kSizeLarge,
               fontWeight: CustomTextTheme.medium,
             ),
           ),
-          SizedBox(
-            height: CustomAppDimensions.sizeSmall,
+          const SizedBox(
+            height: CustomAppDimensions.kSizeSmall,
           ),
           Container(
-            height: CustomAppDimensions.heightContainer,
-            padding: const EdgeInsets.symmetric(horizontal: 16),
+            height: CustomAppDimensions.kSize50,
+            padding: const EdgeInsets.symmetric(
+              horizontal: CustomAppDimensions.kSizeLarge,
+            ),
             decoration: BoxDecoration(
               color: CustomAppTheme.kRaisinBlack,
-              borderRadius: BorderRadius.circular(12),
+              borderRadius:
+                  BorderRadius.circular(CustomAppDimensions.kSizeSmall),
             ),
             child: Center(
               child: Row(
                 children: [
                   SvgPicture.asset(
                     'assets/icons/ic_email.svg',
-                    width: 17,
+                    width: CustomAppDimensions.kSize17,
                   ),
-                  const SizedBox(width: 16),
+                  const SizedBox(width: CustomAppDimensions.kSizeLarge),
                   Expanded(
                     child: TextFormField(
                       style: CustomTextTheme.primaryTextStyle,
@@ -131,43 +146,46 @@ class SignInScreen extends StatelessWidget {
 
   Widget inputPasswordFormComponent(AppLocalizations localizations) {
     return Container(
-      margin: EdgeInsets.only(top: CustomAppDimensions.margin20),
+      margin: const EdgeInsets.only(top: CustomAppDimensions.kSize20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             localizations.password,
             style: CustomTextTheme.primaryTextStyle.copyWith(
-              fontSize: CustomAppDimensions.sizeLarge,
+              fontSize: CustomAppDimensions.kSizeLarge,
               fontWeight: CustomTextTheme.medium,
             ),
           ),
-          SizedBox(
-            height: CustomAppDimensions.sizeSmall,
+          const SizedBox(
+            height: CustomAppDimensions.kSizeSmall,
           ),
           Container(
-            height: CustomAppDimensions.heightContainer,
-            padding: const EdgeInsets.symmetric(horizontal: 16),
+            height: CustomAppDimensions.kSize50,
+            padding:
+                const EdgeInsets.symmetric(horizontal: CustomAppDimensions.kSizeLarge),
             decoration: BoxDecoration(
               color: CustomAppTheme.kRaisinBlack,
-              borderRadius: BorderRadius.circular(12),
+              borderRadius:
+                  BorderRadius.circular(CustomAppDimensions.kSizeSmall),
             ),
             child: Center(
               child: Row(
                 children: [
                   SvgPicture.asset(
                     'assets/icons/ic_password.svg',
-                    width: 18,
+                    width: CustomAppDimensions.kSize18,
                   ),
-                  const SizedBox(width: 16),
+                  const SizedBox(width: CustomAppDimensions.kSizeLarge),
                   Expanded(
                     child: TextFormField(
                       style: CustomTextTheme.primaryTextStyle,
                       autovalidateMode: AutovalidateMode.onUserInteraction,
                       obscureText: true,
                       decoration: InputDecoration.collapsed(
-                          hintText: localizations.hint_password,
-                          hintStyle: CustomTextTheme.subtitleTextStyle),
+                        hintText: localizations.hint_password,
+                        hintStyle: CustomTextTheme.subtitleTextStyle,
+                      ),
                     ),
                   ),
                 ],
@@ -179,25 +197,27 @@ class SignInScreen extends StatelessWidget {
     );
   }
 
-  Widget signInButton(String textButton) {
+  Widget signInButton(BuildContext context, String textButton) {
     return Container(
       width: double.infinity,
-      height: CustomAppDimensions.heightContainer,
-      margin: EdgeInsets.only(
-        top: CustomAppDimensions.defaultMargin,
+      height: CustomAppDimensions.kSize50,
+      margin: const EdgeInsets.only(
+        top: CustomAppDimensions.kSize30,
       ),
       child: TextButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, '/home');
+        },
         style: TextButton.styleFrom(
           backgroundColor: CustomAppTheme.kPrimaryColor,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(CustomAppDimensions.kSizeSmall),
           ),
         ),
         child: Text(
           textButton,
           style: CustomTextTheme.primaryTextStyle.copyWith(
-              fontSize: CustomAppDimensions.sizeLarge,
+              fontSize: CustomAppDimensions.kSizeLarge,
               fontWeight: CustomTextTheme.medium),
         ),
       ),

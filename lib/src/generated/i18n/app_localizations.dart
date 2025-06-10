@@ -138,7 +138,7 @@ abstract class AppLocalizations {
   ///
   /// In id, this message translates to:
   /// **'Masuk'**
-  String get txt_button_sign_in;
+  String get txt_sign_in;
 
   /// Text untuk footer belum memiliki akun
   ///
@@ -151,6 +151,42 @@ abstract class AppLocalizations {
   /// In id, this message translates to:
   /// **'Daftar'**
   String get txt_sign_up;
+
+  /// Subtitle dibawah title Daftar
+  ///
+  /// In id, this message translates to:
+  /// **'Daftar dan Selamat Berbelanja'**
+  String get register_and_happy_shopping;
+
+  /// Title untuk nama lengkap
+  ///
+  /// In id, this message translates to:
+  /// **'Nama Lengkap'**
+  String get full_name;
+
+  /// Hint label untuk form full name
+  ///
+  /// In id, this message translates to:
+  /// **'Nama Lengkap Anda'**
+  String get hint_full_name;
+
+  /// Title untuk nama pengguna
+  ///
+  /// In id, this message translates to:
+  /// **'Nama pengguna'**
+  String get username;
+
+  /// Hint label untuk form nama pengguna
+  ///
+  /// In id, this message translates to:
+  /// **'Nama Pengguna Anda'**
+  String get hint_username;
+
+  /// Text untuk footer sudah memiliki akun
+  ///
+  /// In id, this message translates to:
+  /// **'Sudah memiliki akun? '**
+  String get txt_footer_already_have_account;
 }
 
 class _AppLocalizationsDelegate

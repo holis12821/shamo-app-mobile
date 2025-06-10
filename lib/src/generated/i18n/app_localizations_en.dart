@@ -21,17 +21,35 @@ class AppLocalizationsEn extends AppLocalizations {
   String get password => 'Password';
 
   @override
-  String get hint_email_address => 'Your Email Address';
+  String get hint_email_address => 'Your Email Address ';
 
   @override
   String get hint_password => 'Your Password';
 
   @override
-  String get txt_button_sign_in => 'Sign In';
+  String get txt_sign_in => 'Sign In';
 
   @override
   String get txt_footer => 'Don\'t have an account? ';
 
   @override
   String get txt_sign_up => 'Sign up';
+
+  @override
+  String get register_and_happy_shopping => 'Register and Happy Shoping';
+
+  @override
+  String get full_name => 'Full Name';
+
+  @override
+  String get hint_full_name => 'Your Full Name';
+
+  @override
+  String get username => 'Username';
+
+  @override
+  String get hint_username => 'Your Username';
+
+  @override
+  String get txt_footer_already_have_account => 'Already have an account? ';
 }

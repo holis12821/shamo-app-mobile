@@ -27,11 +27,29 @@ class AppLocalizationsId extends AppLocalizations {
   String get hint_password => 'Kata Sandi Anda';
 
   @override
-  String get txt_button_sign_in => 'Masuk';
+  String get txt_sign_in => 'Masuk';
 
   @override
   String get txt_footer => 'Tidak memiliki akun? ';
 
   @override
   String get txt_sign_up => 'Daftar';
+
+  @override
+  String get register_and_happy_shopping => 'Daftar dan Selamat Berbelanja';
+
+  @override
+  String get full_name => 'Nama Lengkap';
+
+  @override
+  String get hint_full_name => 'Nama Lengkap Anda';
+
+  @override
+  String get username => 'Nama pengguna';
+
+  @override
+  String get hint_username => 'Nama Pengguna Anda';
+
+  @override
+  String get txt_footer_already_have_account => 'Sudah memiliki akun? ';
 }

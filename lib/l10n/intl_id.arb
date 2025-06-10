@@ -25,8 +25,8 @@
     "@hint_password": {
         "description": "Hint label untuk form password"
     },
-    "txt_button_sign_in": "Masuk",
-    "@txt_button_sign_in": {
+    "txt_sign_in": "Masuk",
+    "@txt_sign_in": {
         "description": "Text button untuk login"
     },
     "txt_footer": "Tidak memiliki akun? ",
@@ -36,5 +36,30 @@
     "txt_sign_up": "Daftar",
     "@txt_sign_up": {
         "description": "Label untuk daftar"
+    },
+    "register_and_happy_shopping": "Daftar dan Selamat Berbelanja",
+    "@register_and_happy_shopping": {
+        "description": "Subtitle dibawah title Daftar"
+    },
+    "full_name": "Nama Lengkap",
+    "@full_name": {
+        "description": "Title untuk nama lengkap"
+    },
+    "hint_full_name": "Nama Lengkap Anda",
+    "@hint_full_name": {
+        "description": "Hint label untuk form full name"
+    },
+    "username": "Nama pengguna",
+    "@username": {
+        "description": "Title untuk nama pengguna"
+    },
+    "hint_username": "Nama Pengguna Anda",
+    "@hint_username": {
+        "description": "Hint label untuk form nama pengguna"
+    },
+    "txt_footer_already_have_account": "Sudah memiliki akun? ",
+    "@txt_footer_already_have_account": {
+        "description": "Text untuk footer sudah memiliki akun"
     }
+
 }

@@ -14,7 +14,6 @@ class CustomAppTheme {
   static const kStrokeColor = Color(0xFFE1E1E1);
   static const kDavysGray = Color(0xFF504F5E);
   static const kRaisinBlack = Color(0xFF2B2937);
-
-  /* Icon Assets */
-  static const kIconLogo = 'assets/images/nike_logo.png';
+  static const kRaisinBlackLight = Color(0xFF252836);
+  static const kMoonstone = Color(0xFF38ABBE);
 }
