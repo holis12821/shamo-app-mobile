@@ -9,7 +9,7 @@ import 'custom_app_theme.dart';
 class CustomTextTheme {
 
   static var primaryTextStyle = GoogleFonts.poppins(
-    color: CustomAppTheme.kPrimaryTextColor,
+    color: CustomAppTheme.kAntiFlashWhite,
   );
 
   static var secondaryTextStyle =
@@ -23,6 +23,18 @@ class CustomTextTheme {
 
   static var purpleTextStyle = GoogleFonts.poppins(
     color: CustomAppTheme.kPrimaryColor 
+  );
+
+  static var jetTextStyle = GoogleFonts.poppins(
+    color: CustomAppTheme.kJet
+  );
+
+  static var raisinBlackTextStyle = GoogleFonts.poppins(
+    color: CustomAppTheme.kRaisinBlack
+  );
+  
+  static var ghostWhiteTextStyle = GoogleFonts.poppins(
+    color: CustomAppTheme.kGhostWhite
   );
 
   static var light = FontWeight.w300;

@@ -187,6 +187,72 @@ abstract class AppLocalizations {
   /// In id, this message translates to:
   /// **'Sudah memiliki akun? '**
   String get txt_footer_already_have_account;
+
+  /// Sapaan untuk user yang sudah login
+  ///
+  /// In id, this message translates to:
+  /// **'Halo Alex'**
+  String get greetings_hello;
+
+  /// Username untuk user yang sudah login
+  ///
+  /// In id, this message translates to:
+  /// **'@alexkeinn'**
+  String get user_name;
+
+  /// Title untuk kategori semua sepatu
+  ///
+  /// In id, this message translates to:
+  /// **'Semua Sepatu'**
+  String get all_shoes;
+
+  /// Title untuk kategori sepatu lari
+  ///
+  /// In id, this message translates to:
+  /// **'Berlari'**
+  String get running_shoes;
+
+  /// Title untuk kategori sepatu basket
+  ///
+  /// In id, this message translates to:
+  /// **'Basket'**
+  String get basketball_shoes;
+
+  /// Title untuk kategori sepatu latihan
+  ///
+  /// In id, this message translates to:
+  /// **'Latihan'**
+  String get training_shoes;
+
+  /// Title untuk kategori produk populer
+  ///
+  /// In id, this message translates to:
+  /// **'Produk Populer'**
+  String get popular_products;
+
+  /// Title untuk kategori sepatu hiking
+  ///
+  /// In id, this message translates to:
+  /// **'Hiking'**
+  String get hiking_shoes;
+
+  /// Nama produk sepatu Court Vision 2.0
+  ///
+  /// In id, this message translates to:
+  /// **'Court Vision 2.0'**
+  String get court_vision;
+
+  /// Harga produk dalam format nominal Rupiah
+  ///
+  /// In id, this message translates to:
+  /// **'Rp. 1.000.000'**
+  String get price_nominal;
+
+  /// Title untuk kategori produk baru
+  ///
+  /// In id, this message translates to:
+  /// **'Produk Baru'**
+  String get new_arrivals;
 }
 
 class _AppLocalizationsDelegate

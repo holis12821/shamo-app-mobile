@@ -52,4 +52,37 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get txt_footer_already_have_account => 'Sudah memiliki akun? ';
+
+  @override
+  String get greetings_hello => 'Halo Alex';
+
+  @override
+  String get user_name => '@alexkeinn';
+
+  @override
+  String get all_shoes => 'Semua Sepatu';
+
+  @override
+  String get running_shoes => 'Berlari';
+
+  @override
+  String get basketball_shoes => 'Basket';
+
+  @override
+  String get training_shoes => 'Latihan';
+
+  @override
+  String get popular_products => 'Produk Populer';
+
+  @override
+  String get hiking_shoes => 'Hiking';
+
+  @override
+  String get court_vision => 'Court Vision 2.0';
+
+  @override
+  String get price_nominal => 'Rp. 1.000.000';
+
+  @override
+  String get new_arrivals => 'Produk Baru';
 }

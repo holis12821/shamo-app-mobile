@@ -60,6 +60,49 @@
     "txt_footer_already_have_account": "Sudah memiliki akun? ",
     "@txt_footer_already_have_account": {
         "description": "Text untuk footer sudah memiliki akun"
+    },
+    "greetings_hello": "Halo Alex",
+    "@greetings_hello": {
+        "description": "Sapaan untuk user yang sudah login"
+    },
+    "user_name": "@alexkeinn",
+    "@user_name": {
+        "description": "Username untuk user yang sudah login"
+    },
+    "all_shoes": "Semua Sepatu",
+    "@all_shoes": {
+        "description": "Title untuk kategori semua sepatu"
+    },
+    "running_shoes": "Berlari",
+    "@running_shoes": {
+        "description": "Title untuk kategori sepatu lari"
+    },
+    "basketball_shoes": "Basket",
+    "@basketball_shoes": {
+        "description": "Title untuk kategori sepatu basket"
+    },
+    "training_shoes": "Latihan",
+    "@training_shoes": {
+        "description": "Title untuk kategori sepatu latihan"
+    },
+    "popular_products": "Produk Populer",
+    "@popular_products": {
+        "description": "Title untuk kategori produk populer"
+    },
+    "hiking_shoes": "Hiking",
+    "@hiking_shoes": {
+        "description": "Title untuk kategori sepatu hiking"
+    },
+    "court_vision": "Court Vision 2.0",
+    "@court_vision": {
+        "description": "Nama produk sepatu Court Vision 2.0"
+    },
+    "price_nominal": "Rp. 1.000.000",
+    "@price_nominal": {
+        "description": "Harga produk dalam format nominal Rupiah"
+    },
+    "new_arrivals": "Produk Baru",
+    "@new_arrivals": {
+        "description": "Title untuk kategori produk baru"
     }
-
 }

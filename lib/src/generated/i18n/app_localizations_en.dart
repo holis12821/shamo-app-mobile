@@ -52,4 +52,37 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get txt_footer_already_have_account => 'Already have an account? ';
+
+  @override
+  String get greetings_hello => 'Hallo, Alex';
+
+  @override
+  String get user_name => '@alexkeinn';
+
+  @override
+  String get all_shoes => 'All Shoes';
+
+  @override
+  String get running_shoes => 'Running';
+
+  @override
+  String get basketball_shoes => 'Basketball';
+
+  @override
+  String get training_shoes => 'Training';
+
+  @override
+  String get popular_products => 'Popular Products';
+
+  @override
+  String get hiking_shoes => 'Hiking';
+
+  @override
+  String get court_vision => 'Court Vision 2.0';
+
+  @override
+  String get price_nominal => 'Rp. 1.000.000';
+
+  @override
+  String get new_arrivals => 'New Arrivals';
 }

@@ -14,5 +14,16 @@
     "hint_full_name": "Your Full Name",
     "username": "Username",
     "hint_username": "Your Username",
-    "txt_footer_already_have_account": "Already have an account? "
+    "txt_footer_already_have_account": "Already have an account? ",
+    "greetings_hello": "Hallo, Alex",
+    "user_name": "@alexkeinn",
+    "all_shoes": "All Shoes",
+    "running_shoes": "Running",
+    "basketball_shoes": "Basketball",
+    "training_shoes": "Training",
+    "popular_products": "Popular Products",
+    "hiking_shoes": "Hiking",
+    "court_vision": "Court Vision 2.0",
+    "price_nominal": "Rp. 1.000.000",
+    "new_arrivals": "New Arrivals"
 }
