@@ -7,7 +7,7 @@ import 'package:shamoapps/presentation/screens/chat_screen/chat_screen.dart';
 import 'package:shamoapps/presentation/screens/home_screen/home_screen.dart';
 import 'package:shamoapps/presentation/screens/profile_screen/profile_screen.dart';
 import 'package:shamoapps/presentation/screens/wish_list_screen/wish_list_screen.dart';
-import 'package:shamoapps/presentation/widgets/custom_bottom_bar.dart';
+import 'package:shamoapps/presentation/widgets/custom_bottom_bar_widget.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -42,7 +42,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: CustomAppTheme.kRaisinPrimaryColor,
+      backgroundColor: CustomAppTheme.kRaisinBlackSecond,
       body: SafeArea(
         child: AnimatedSwitcher(
           duration: const Duration(milliseconds: 300),
@@ -53,7 +53,7 @@ class _MainScreenState extends State<MainScreen> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: cartButton(),
-      bottomNavigationBar: CustomBottomBar(
+      bottomNavigationBar: CustomBottomBarWidget(
         selectedIndex: _selectedIndex,
         onTap: _onTap,
         icons: _icons,

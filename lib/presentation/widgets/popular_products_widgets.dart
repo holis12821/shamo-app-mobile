@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shamoapps/core/theme/custom_app_dimensions.dart';
 import 'package:shamoapps/core/theme/custom_app_theme.dart';
+import 'package:shamoapps/core/theme/custom_assets.dart';
 import 'package:shamoapps/core/theme/custom_text_theme.dart';
 import 'package:shamoapps/src/generated/i18n/app_localizations.dart';
 
@@ -45,7 +46,9 @@ class PopularProductsWidgets extends StatelessWidget {
   Widget sectionProductPopular(AppLocalizations localizations) {
     return Container(
       height: CustomAppDimensions.kSize278,
-      margin: const EdgeInsets.only(top: CustomAppDimensions.kSizeMedium),
+      margin: const EdgeInsets.only(
+        top: CustomAppDimensions.kSizeMedium,
+      ),
       child: ListView.builder(
         padding: const EdgeInsets.only(
           left: CustomAppDimensions.kSizeMediumLarge,
@@ -89,7 +92,7 @@ class PopularProductsWidgets extends StatelessWidget {
             height: CustomAppDimensions.kSize30,
           ),
           Image.asset(
-            'assets/images/shoes.png',
+            CustomAssets.kShoesImage,
             width: CustomAppDimensions.kSize215,
             height: CustomAppDimensions.kSize150,
             fit: BoxFit.cover,

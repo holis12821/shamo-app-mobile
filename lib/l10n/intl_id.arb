@@ -104,5 +104,41 @@
     "new_arrivals": "Produk Baru",
     "@new_arrivals": {
         "description": "Title untuk kategori produk baru"
+    },
+    "message_support": "Dukungan Pesan",
+    "@message_support": {
+        "description": "Title untuk dukungan pesan"
+    },
+    "oopss_no_message_yet": "Opss belum ada pesan?",
+    "@oopss_no_message_yet": {
+        "description": "title wording yang menandakan belum ada pesan"
+    },
+    "never_done_transaction": "Anda belum pernah melakukan transaksi",
+    "@never_done_transaction": {
+        "description": "subtitle belum ada transaksi"
+    },
+    "explore_store": "Jelajahi Toko",
+    "@explore_store": {
+        "description": "Wording untuk Jelajahi Toko"
+    },
+    "shoe_store": "Toko Sepatu",
+    "@shoe_store": {
+        "description": "Wording toko sepatu"
+    },
+    "chat_content": "Selamat malam, Item ini sedang aktif...",
+    "@chat_content": {
+        "description": "Wording message chat"
+    },
+    "now": "Sekarang",
+    "@now": {
+        "description": "Waktu pesan"
+    },
+    "online": "Online",
+    "@online": {
+        "description": "Seller yang sedang online pada chat"
+    },
+    "typing_txt": "Ketik Pesan...",
+    "@typing_txt": {
+        "description": "Ketik Pesan hint text"
     }
 }

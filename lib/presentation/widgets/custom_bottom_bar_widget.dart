@@ -3,8 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shamoapps/core/theme/custom_app_dimensions.dart';
 import 'package:shamoapps/core/theme/custom_app_theme.dart';
 
-class CustomBottomBar extends StatelessWidget {
-  const CustomBottomBar(
+class CustomBottomBarWidget extends StatelessWidget {
+  const CustomBottomBarWidget(
       {super.key, required this.selectedIndex, required this.onTap, required this.icons});
 
   final int selectedIndex;

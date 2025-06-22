@@ -85,4 +85,31 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get new_arrivals => 'New Arrivals';
+
+  @override
+  String get message_support => 'Message Support';
+
+  @override
+  String get oopss_no_message_yet => 'Opss no message yet?';
+
+  @override
+  String get never_done_transaction => 'You have never done a transaction';
+
+  @override
+  String get explore_store => 'Explore Store';
+
+  @override
+  String get shoe_store => 'Shoe Store';
+
+  @override
+  String get chat_content => 'Good night, This item is on...';
+
+  @override
+  String get now => 'Now';
+
+  @override
+  String get online => 'Online';
+
+  @override
+  String get typing_txt => 'Type Message...';
 }

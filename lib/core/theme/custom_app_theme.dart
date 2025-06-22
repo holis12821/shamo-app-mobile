@@ -19,4 +19,7 @@ class CustomAppTheme {
   static const kMoonstone = Color(0xFF38ABBE);
   static const kTransparentColor = Colors.transparent;
   static const kJet = Color(0xFF2E2E2E);
+  static const kRaisinBlackSecond = Color(0xFF242231);
+  static const kEmerald = Color(0xFF51C17E);
+  static const kSpaceCadet = Color(0xFF2B2844);
 }

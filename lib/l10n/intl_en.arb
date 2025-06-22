@@ -25,5 +25,14 @@
     "hiking_shoes": "Hiking",
     "court_vision": "Court Vision 2.0",
     "price_nominal": "Rp. 1.000.000",
-    "new_arrivals": "New Arrivals"
+    "new_arrivals": "New Arrivals",
+    "message_support": "Message Support",
+    "oopss_no_message_yet": "Opss no message yet?",
+    "never_done_transaction": "You have never done a transaction",
+    "explore_store": "Explore Store",
+    "shoe_store": "Shoe Store",
+    "chat_content": "Good night, This item is on...",
+    "now": "Now",
+    "online": "Online",
+    "typing_txt": "Type Message..."
 }

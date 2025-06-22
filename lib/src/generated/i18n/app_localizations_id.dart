@@ -85,4 +85,31 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get new_arrivals => 'Produk Baru';
+
+  @override
+  String get message_support => 'Dukungan Pesan';
+
+  @override
+  String get oopss_no_message_yet => 'Opss belum ada pesan?';
+
+  @override
+  String get never_done_transaction => 'Anda belum pernah melakukan transaksi';
+
+  @override
+  String get explore_store => 'Jelajahi Toko';
+
+  @override
+  String get shoe_store => 'Toko Sepatu';
+
+  @override
+  String get chat_content => 'Selamat malam, Item ini sedang aktif...';
+
+  @override
+  String get now => 'Sekarang';
+
+  @override
+  String get online => 'Online';
+
+  @override
+  String get typing_txt => 'Ketik Pesan...';
 }

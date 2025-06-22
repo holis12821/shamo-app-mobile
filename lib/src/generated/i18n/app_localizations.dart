@@ -253,6 +253,60 @@ abstract class AppLocalizations {
   /// In id, this message translates to:
   /// **'Produk Baru'**
   String get new_arrivals;
+
+  /// Title untuk dukungan pesan
+  ///
+  /// In id, this message translates to:
+  /// **'Dukungan Pesan'**
+  String get message_support;
+
+  /// title wording yang menandakan belum ada pesan
+  ///
+  /// In id, this message translates to:
+  /// **'Opss belum ada pesan?'**
+  String get oopss_no_message_yet;
+
+  /// subtitle belum ada transaksi
+  ///
+  /// In id, this message translates to:
+  /// **'Anda belum pernah melakukan transaksi'**
+  String get never_done_transaction;
+
+  /// Wording untuk Jelajahi Toko
+  ///
+  /// In id, this message translates to:
+  /// **'Jelajahi Toko'**
+  String get explore_store;
+
+  /// Wording toko sepatu
+  ///
+  /// In id, this message translates to:
+  /// **'Toko Sepatu'**
+  String get shoe_store;
+
+  /// Wording message chat
+  ///
+  /// In id, this message translates to:
+  /// **'Selamat malam, Item ini sedang aktif...'**
+  String get chat_content;
+
+  /// Waktu pesan
+  ///
+  /// In id, this message translates to:
+  /// **'Sekarang'**
+  String get now;
+
+  /// Seller yang sedang online pada chat
+  ///
+  /// In id, this message translates to:
+  /// **'Online'**
+  String get online;
+
+  /// Ketik Pesan hint text
+  ///
+  /// In id, this message translates to:
+  /// **'Ketik Pesan...'**
+  String get typing_txt;
 }
 
 class _AppLocalizationsDelegate
