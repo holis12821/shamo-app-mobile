@@ -48,7 +48,6 @@ class _DetailChatViewState extends State<DetailChatView>
     _scrollDebounce?.cancel();
     _scrollController.dispose();
     _controller.dispose();
-    _player.dispose();
     super.dispose();
   }
 
@@ -224,7 +223,7 @@ class _DetailChatViewState extends State<DetailChatView>
       builder: (context, state) {
         return Container(
           margin: EdgeInsets.only(
-            top: CustomAppDimensions.kSize6,
+            top: CustomAppDimensions.kSize20,
             left: CustomAppDimensions.kSize20,
             right: CustomAppDimensions.kSize20,
             bottom: bottomInset > 0
