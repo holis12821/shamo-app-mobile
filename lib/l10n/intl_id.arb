@@ -140,5 +140,21 @@
     "typing_txt": "Ketik Pesan...",
     "@typing_txt": {
         "description": "Ketik Pesan hint text"
+    },
+    "product_name": "COURT VISION 2.0 SHOES",
+    "@product_name": {
+        "description": "Nama Product"
+    },
+    "add_to_cart": "Tambahkan ke Keranjang",
+    "@add_to_cart": {
+        "description": "Wording Tambahkan ke Keranjang"
+    },
+    "buy_now": "Beli Sekarang",
+    "@buy_now": {
+        "description": "Wording Beli Sekarang"
+    },
+    "chat_message": "Selamat malam, Item ini hanya tersedia dalam ukuran 42 dan 43",
+    "@chat_message": {
+        "description": "message text"
     }
 }

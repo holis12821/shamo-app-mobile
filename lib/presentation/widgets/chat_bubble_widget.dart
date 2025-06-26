@@ -3,6 +3,7 @@ import 'package:shamoapps/core/theme/custom_app_dimensions.dart';
 import 'package:shamoapps/core/theme/custom_app_theme.dart';
 import 'package:shamoapps/core/theme/custom_text_theme.dart';
 import 'package:shamoapps/domain/entity/chat.dart';
+import 'package:shamoapps/src/generated/i18n/app_localizations.dart';
 
 class ChatBubbleWidget extends StatelessWidget {
   const ChatBubbleWidget({
@@ -11,13 +12,14 @@ class ChatBubbleWidget extends StatelessWidget {
     required this.sender,
   });
 
-  final String text;
-  final SenderType sender;
+  final String? text;
+  final SenderType? sender;
 
   @override
   Widget build(BuildContext context) {
     final isUser = sender == SenderType.sender;
     final width = MediaQuery.of(context).size.width;
+    final localizations = AppLocalizations.of(context)!;
 
     return Align(
       alignment: isUser ? Alignment.centerRight : Alignment.centerLeft,
@@ -33,16 +35,16 @@ class ChatBubbleWidget extends StatelessWidget {
               ? CustomAppTheme.kSpaceCadet
               : CustomAppTheme.kRaisinBlackLight,
           borderRadius: BorderRadius.only(
-            topLeft: const Radius.circular(CustomAppDimensions.kSizeLarge),
-            topRight: const Radius.circular(CustomAppDimensions.kSizeLarge),
+            topLeft: const Radius.circular(CustomAppDimensions.kSizeSmall),
+            topRight: const Radius.circular(CustomAppDimensions.kSizeSmall),
             bottomLeft:
-                Radius.circular(isUser ? CustomAppDimensions.kSizeLarge : 0),
+                Radius.circular(isUser ? CustomAppDimensions.kSizeSmall : 0),
             bottomRight:
-                Radius.circular(isUser ? 0 : CustomAppDimensions.kSizeLarge),
+                Radius.circular(isUser ? 0 : CustomAppDimensions.kSizeSmall),
           ),
         ),
         child: Text(
-          text,
+          text ?? localizations.chat_message,
           style: CustomTextTheme.primaryTextStyle,
         ),
       ),

@@ -47,7 +47,13 @@ dependencies:
   # Localization
   intl: ^0.20.2
   path_provider: ^2.1.5
+  # Json Annotation
   json_annotation: ^4.9.0
+  # Bloc
+  flutter_bloc: ^7.0.0
+  # Equatable
+  equatable: ^2.0.7
+  audioplayers: ^6.5.0
 
 dev_dependencies:
   flutter_test:
@@ -80,6 +86,7 @@ flutter:
   assets:
    - assets/icons/
    - assets/images/
+   - assets/sounds/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

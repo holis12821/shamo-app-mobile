@@ -307,6 +307,30 @@ abstract class AppLocalizations {
   /// In id, this message translates to:
   /// **'Ketik Pesan...'**
   String get typing_txt;
+
+  /// Nama Product
+  ///
+  /// In id, this message translates to:
+  /// **'COURT VISION 2.0 SHOES'**
+  String get product_name;
+
+  /// Wording Tambahkan ke Keranjang
+  ///
+  /// In id, this message translates to:
+  /// **'Tambahkan ke Keranjang'**
+  String get add_to_cart;
+
+  /// Wording Beli Sekarang
+  ///
+  /// In id, this message translates to:
+  /// **'Beli Sekarang'**
+  String get buy_now;
+
+  /// message text
+  ///
+  /// In id, this message translates to:
+  /// **'Selamat malam, Item ini hanya tersedia dalam ukuran 42 dan 43'**
+  String get chat_message;
 }
 
 class _AppLocalizationsDelegate

@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:shamoapps/data/model/product_model.dart';
 import 'package:shamoapps/domain/entity/chat.dart';
 
 part 'chat_model.g.dart';
@@ -8,9 +9,7 @@ class ChatModel {
   ChatType? type;
   String? text;
   SenderType? sender;
-  String? productName;
-  String? imageUrl;
-  double? price;
+  ProductModel? product;
 
   ChatModel();
 
@@ -21,16 +20,15 @@ class ChatModel {
 
   Chat mapToMessage() {
     return Chat.message(
-      text: text,
-      sender: sender,
+      text ?? '',
+      sender ?? SenderType.sender,
     );
   }
 
   Chat mapToProduct() {
     return Chat.product(
-      productName: productName,
-      imageUrl: imageUrl,
-      price: price,
+      product?.map(),
+      sender ?? SenderType.sender,
     );
   }
 }

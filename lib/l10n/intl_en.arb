@@ -34,5 +34,9 @@
     "chat_content": "Good night, This item is on...",
     "now": "Now",
     "online": "Online",
-    "typing_txt": "Type Message..."
+    "typing_txt": "Type Message...",
+    "product_name": "COURT VISION 2.0 SHOES",
+    "add_to_cart": "Add to Cart",
+    "buy_now": "Buy Now",
+    "chat_message": "Good night, This item is only available in size 42 and 43"
 }

@@ -112,4 +112,17 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get typing_txt => 'Ketik Pesan...';
+
+  @override
+  String get product_name => 'COURT VISION 2.0 SHOES';
+
+  @override
+  String get add_to_cart => 'Tambahkan ke Keranjang';
+
+  @override
+  String get buy_now => 'Beli Sekarang';
+
+  @override
+  String get chat_message =>
+      'Selamat malam, Item ini hanya tersedia dalam ukuran 42 dan 43';
 }

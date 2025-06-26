@@ -1,3 +1,5 @@
+import 'package:shamoapps/domain/entity/product.dart';
+
 enum ChatType { message, product }
 
 enum SenderType { sender, receiver }
@@ -5,23 +7,25 @@ enum SenderType { sender, receiver }
 class Chat {
   final ChatType type;
   final String? text;
+  final Product? product;
   final SenderType? sender;
 
-  final String? productName;
-  final String? imageUrl;
-  final double? price;
+  Chat({
+    required this.type,
+    this.text,
+    this.product,
+    required this.sender,
+  });
 
-  Chat.message({required this.text, required this.sender})
-      : type = ChatType.message,
-        productName = null,
-        imageUrl = null,
-        price = null;
+  factory Chat.message(String text, SenderType sender) => Chat(
+        type: ChatType.message,
+        text: text,
+        sender: sender,
+      );
 
-  Chat.product({
-    required this.productName,
-    required this.imageUrl,
-    required this.price,
-  })  : type = ChatType.product,
-        text = null,
-        sender = null;
+  factory Chat.product(Product? product, SenderType sender) => Chat(
+        type: ChatType.product,
+        product: product,
+        sender: sender,
+      );
 }

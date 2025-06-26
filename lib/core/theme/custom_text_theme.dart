@@ -37,6 +37,10 @@ class CustomTextTheme {
     color: CustomAppTheme.kGhostWhite
   );
 
+  static var spaceCadetTextStyle = GoogleFonts.poppins(
+    color: CustomAppTheme.kSpaceCadet
+  );
+
   static var light = FontWeight.w300;
   static var regular = FontWeight.w400;
   static var medium = FontWeight.w500;

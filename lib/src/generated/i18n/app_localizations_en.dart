@@ -112,4 +112,17 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get typing_txt => 'Type Message...';
+
+  @override
+  String get product_name => 'COURT VISION 2.0 SHOES';
+
+  @override
+  String get add_to_cart => 'Add to Cart';
+
+  @override
+  String get buy_now => 'Buy Now';
+
+  @override
+  String get chat_message =>
+      'Good night, This item is only available in size 42 and 43';
 }
