@@ -72,12 +72,16 @@ class _DetailChatViewState extends State<DetailChatView>
 
   void _scrollToBottom() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (_scrollController.hasClients) {
-        _scrollController.animateTo(
-          _scrollController.position.maxScrollExtent,
-          duration: const Duration(milliseconds: 300),
-          curve: Curves.easeOut,
-        );
+      if (_scrollController.hasClients &&
+          _scrollController.offset >=
+              _scrollController.position.maxScrollExtent - 100) {
+        Future.delayed(const Duration(milliseconds: 150), () {
+          _scrollController.animateTo(
+            _scrollController.position.maxScrollExtent,
+            duration: const Duration(milliseconds: 300),
+            curve: Curves.easeOut,
+          );
+        });
       }
     });
   }
@@ -87,17 +91,22 @@ class _DetailChatViewState extends State<DetailChatView>
     final localizations = AppLocalizations.of(context)!;
 
     return BlocListener<ChatBloc, ChatState>(
-      listenWhen: (prev, curr) =>
-          prev.chatList.length < curr.chatList.length || curr.isPlayReplySound,
-      listener: (context, state) async {
-        _scrollToBottom();
+      listenWhen: (prev, curr) {
+        final hasNewMessage = prev.chatList.length < curr.chatList.length;
+        final typingChanged = prev.isTyping != curr.isTyping;
+        final justReplied = curr.isPlayReplySound && !prev.isPlayReplySound;
 
+        return hasNewMessage || typingChanged || justReplied;
+      },
+      listener: (context, state) async {
         if (state.isPlayReplySound) {
           await _player.play(AssetSource('sounds/incoming_message.mp3'));
           if (context.mounted) {
             context.read<ChatBloc>().add(ResetReplySound());
           }
         }
+
+        _scrollToBottom();
       },
       child: Scaffold(
         resizeToAvoidBottomInset: true,
@@ -182,7 +191,9 @@ class _DetailChatViewState extends State<DetailChatView>
           itemBuilder: (context, index) {
             if (state.isTyping && index == messages.length) {
               return ChatBubbleWidget(
-                  text: localizations.typing_txt, sender: SenderType.receiver);
+                text: localizations.typing_txt,
+                sender: SenderType.receiver,
+              );
             }
 
             final item = messages[index];
@@ -213,7 +224,7 @@ class _DetailChatViewState extends State<DetailChatView>
       builder: (context, state) {
         return Container(
           margin: EdgeInsets.only(
-            top: CustomAppDimensions.kSize20,
+            top: CustomAppDimensions.kSize6,
             left: CustomAppDimensions.kSize20,
             right: CustomAppDimensions.kSize20,
             bottom: bottomInset > 0

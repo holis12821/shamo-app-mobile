@@ -26,7 +26,7 @@ class ChatBubbleWidget extends StatelessWidget {
       child: Container(
         margin: const EdgeInsets.symmetric(
           horizontal: CustomAppDimensions.kSizeLarge,
-          vertical: CustomAppDimensions.kSize6,
+          vertical: CustomAppDimensions.kSizeSmall,
         ),
         padding: const EdgeInsets.all(CustomAppDimensions.kSizeSmall),
         constraints: BoxConstraints(maxWidth: width * .75),
