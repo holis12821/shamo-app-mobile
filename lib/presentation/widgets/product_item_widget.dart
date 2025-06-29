@@ -48,7 +48,7 @@ class ProductItemWidget extends StatelessWidget {
                 Radius.circular(isUser ? 0 : CustomAppDimensions.kSizeSmall),
           ),
         ),
-        constraints: BoxConstraints(maxWidth: width * .55),
+        constraints: BoxConstraints(maxWidth: width * .7),
         child: Column(
           children: [
             Row(

@@ -145,7 +145,7 @@
     "@product_name": {
         "description": "Nama Product"
     },
-    "add_to_cart": "Tambahkan ke Keranjang",
+    "add_to_cart": "Add to Cart",
     "@add_to_cart": {
         "description": "Wording Tambahkan ke Keranjang"
     },

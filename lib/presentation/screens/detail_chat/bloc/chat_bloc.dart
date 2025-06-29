@@ -67,11 +67,17 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
       "Thanks for your message. We'll respond shortly.",
       SenderType.receiver,
     );
-    emit(state.copyWith(
-      chatList: [...state.chatList, replyMessage],
-      isTyping: false,
-      isPlayReplySound: true,
-    ),);
+    emit(
+      state.copyWith(
+        chatList: [...state.chatList, replyMessage],
+        isTyping: false,
+        isPlayReplySound: true,
+      ),
+    );
+
+    Future.delayed(const Duration(milliseconds: 200), () {
+      add(ResetReplySound());
+    });
   }
 
   void _isShowProductPreview(ProductPreview event, Emitter<ChatState> emit) {

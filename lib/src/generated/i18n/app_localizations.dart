@@ -317,7 +317,7 @@ abstract class AppLocalizations {
   /// Wording Tambahkan ke Keranjang
   ///
   /// In id, this message translates to:
-  /// **'Tambahkan ke Keranjang'**
+  /// **'Add to Cart'**
   String get add_to_cart;
 
   /// Wording Beli Sekarang

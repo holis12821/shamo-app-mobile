@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shamoapps/core/theme/custom_app_dimensions.dart';
@@ -8,6 +7,7 @@ import 'package:shamoapps/core/theme/custom_app_theme.dart';
 import 'package:shamoapps/core/theme/custom_assets.dart';
 import 'package:shamoapps/core/theme/custom_text_theme.dart';
 import 'package:shamoapps/domain/entity/chat.dart';
+import 'package:shamoapps/helper/sound_helper.dart';
 import 'package:shamoapps/presentation/screens/detail_chat/bloc/chat_bloc.dart';
 import 'package:shamoapps/presentation/screens/detail_chat/bloc/chat_event.dart';
 import 'package:shamoapps/presentation/screens/detail_chat/bloc/chat_state.dart';
@@ -29,7 +29,6 @@ class _DetailChatViewState extends State<DetailChatView>
     with TickerProviderStateMixin {
   final ScrollController _scrollController = ScrollController();
   final TextEditingController _controller = TextEditingController();
-  static final AudioPlayer _player = AudioPlayer();
   Timer? _scrollDebounce;
   bool _isSending = false;
 
@@ -66,14 +65,14 @@ class _DetailChatViewState extends State<DetailChatView>
       Future.delayed(const Duration(milliseconds: 600), () {
         if (mounted) setState(() => _isSending = false);
       });
+
+      _scrollToBottom();
     }
   }
 
   void _scrollToBottom() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (_scrollController.hasClients &&
-          _scrollController.offset >=
-              _scrollController.position.maxScrollExtent - 100) {
+      if (_scrollController.hasClients) {
         Future.delayed(const Duration(milliseconds: 150), () {
           _scrollController.animateTo(
             _scrollController.position.maxScrollExtent,
@@ -99,10 +98,7 @@ class _DetailChatViewState extends State<DetailChatView>
       },
       listener: (context, state) async {
         if (state.isPlayReplySound) {
-          await _player.play(AssetSource('sounds/incoming_message.mp3'));
-          if (context.mounted) {
-            context.read<ChatBloc>().add(ResetReplySound());
-          }
+          await SoundHelper.playSendSound();
         }
 
         _scrollToBottom();
@@ -182,9 +178,11 @@ class _DetailChatViewState extends State<DetailChatView>
         final messages = state.chatList;
         return ListView.builder(
           controller: _scrollController,
-          padding: const EdgeInsets.symmetric(
-            horizontal: CustomAppDimensions.kSize18,
-            vertical: CustomAppDimensions.kSize18,
+          padding: EdgeInsets.only(
+            top: state.isShowProductPreview ? CustomAppDimensions.kSize18 : 0,
+            left: CustomAppDimensions.kSize18,
+            right: CustomAppDimensions.kSize18,
+            bottom: CustomAppDimensions.kSize18,
           ),
           itemCount: messages.length + (state.isTyping ? 1 : 0),
           itemBuilder: (context, index) {
@@ -223,12 +221,12 @@ class _DetailChatViewState extends State<DetailChatView>
       builder: (context, state) {
         return Container(
           margin: EdgeInsets.only(
-            top: CustomAppDimensions.kSize20,
+            top: CustomAppDimensions.kSizeSuperSmall,
             left: CustomAppDimensions.kSize20,
             right: CustomAppDimensions.kSize20,
             bottom: bottomInset > 0
                 ? (bottomInset + CustomAppDimensions.kSize20)
-                : CustomAppDimensions.kSize40,
+                : CustomAppDimensions.kSize20,
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,

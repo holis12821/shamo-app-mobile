@@ -117,7 +117,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get product_name => 'COURT VISION 2.0 SHOES';
 
   @override
-  String get add_to_cart => 'Tambahkan ke Keranjang';
+  String get add_to_cart => 'Add to Cart';
 
   @override
   String get buy_now => 'Beli Sekarang';
