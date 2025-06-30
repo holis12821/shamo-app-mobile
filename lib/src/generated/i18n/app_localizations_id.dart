@@ -125,4 +125,13 @@ class AppLocalizationsId extends AppLocalizations {
   @override
   String get chat_message =>
       'Selamat malam, Item ini hanya tersedia dalam ukuran 42 dan 43';
+
+  @override
+  String get favorite_shoes => 'Sepatu Favorit';
+
+  @override
+  String get empty_wishlist_shoes => ' Anda tidak memiliki sepatu impian?';
+
+  @override
+  String get find_favorite_shoes => 'Mari temukan sepatu favorit Anda';
 }

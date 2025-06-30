@@ -331,6 +331,24 @@ abstract class AppLocalizations {
   /// In id, this message translates to:
   /// **'Selamat malam, Item ini hanya tersedia dalam ukuran 42 dan 43'**
   String get chat_message;
+
+  /// Wording Sepatu Favorit
+  ///
+  /// In id, this message translates to:
+  /// **'Sepatu Favorit'**
+  String get favorite_shoes;
+
+  /// empty_title_wishlist
+  ///
+  /// In id, this message translates to:
+  /// **' Anda tidak memiliki sepatu impian?'**
+  String get empty_wishlist_shoes;
+
+  /// temukan sepatu yang anda suka
+  ///
+  /// In id, this message translates to:
+  /// **'Mari temukan sepatu favorit Anda'**
+  String get find_favorite_shoes;
 }
 
 class _AppLocalizationsDelegate

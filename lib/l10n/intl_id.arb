@@ -2,15 +2,15 @@
     "@@locale": "id",
     "login": "Login",
     "@login": {
-       "description": "Title Login",
-       "type": "text"
+        "description": "Title Login",
+        "type": "text"
     },
     "sign_in_to_continue": "Daftar untuk Masuk",
     "@sign_in_to_continue": {
         "description": "Subtitle dibawah title Login"
     },
     "email_address": "Alamat Email",
-    "@email_address":{ 
+    "@email_address": {
         "description": "Label untuk form email"
     },
     "password": "Password",
@@ -156,5 +156,17 @@
     "chat_message": "Selamat malam, Item ini hanya tersedia dalam ukuran 42 dan 43",
     "@chat_message": {
         "description": "message text"
+    },
+    "favorite_shoes": "Sepatu Favorit",
+    "@favorite_shoes": {
+        "description": "Wording Sepatu Favorit"
+    },
+    "empty_wishlist_shoes": " Anda tidak memiliki sepatu impian?",
+    "@empty_wishlist_shoes": {
+        "description": "empty_title_wishlist"
+    },
+    "find_favorite_shoes": "Mari temukan sepatu favorit Anda",
+    "@find_favorite_shoes": {
+        "description": "temukan sepatu yang anda suka"
     }
 }

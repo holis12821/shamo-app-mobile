@@ -125,4 +125,13 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get chat_message =>
       'Good night, This item is only available in size 42 and 43';
+
+  @override
+  String get favorite_shoes => 'Favorite Shoes';
+
+  @override
+  String get empty_wishlist_shoes => 'You don\'t have dream shoes?';
+
+  @override
+  String get find_favorite_shoes => 'Let\'s find your favorite shoes';
 }
