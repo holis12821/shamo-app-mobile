@@ -13,7 +13,7 @@ class CustomTextTheme {
   );
 
   static var secondaryTextStyle =
-      GoogleFonts.poppins(color: CustomAppTheme.kSecondaryTextColor);
+      GoogleFonts.poppins(color: CustomAppTheme.kSecondaryColor);
 
   static var priceTextStyle = GoogleFonts.poppins(color: CustomAppTheme.kDodgerBlue);
 

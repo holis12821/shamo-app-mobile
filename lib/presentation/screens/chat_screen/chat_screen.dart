@@ -13,23 +13,26 @@ class ChatScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var localizations = AppLocalizations.of(context)!;
 
-    return SafeArea(
-      child: Column(
-        children: [
-          headerChat(localizations),
-          const Divider(
-            thickness: 1,
-            color: CustomAppTheme.kRaisinPrimaryColor,
-          ),
-          contentChat(localizations),
-        ],
+    return Scaffold(
+      backgroundColor: CustomAppTheme.kRaisinPrimaryColor,
+      appBar: headerChat(context, localizations),
+      body: SafeArea(
+        child: Column(
+          children: [
+            contentChat(localizations),
+          ],
+        ),
       ),
     );
   }
 
-  Widget headerChat(AppLocalizations localization) {
+  PreferredSizeWidget headerChat(BuildContext context, AppLocalizations localization) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final headerHeight = screenHeight * (60 / screenHeight);
+
     return AppBar(
-      backgroundColor: CustomAppTheme.kRaisinBlackSecond,
+      toolbarHeight: headerHeight,
+      backgroundColor: CustomAppTheme.kRaisinPrimaryColor,
       centerTitle: true,
       title: Text(
         localization.message_support,
@@ -48,7 +51,14 @@ class ChatScreen extends StatelessWidget {
       child: Container(
         width: double.infinity,
         decoration: const BoxDecoration(
-          color: CustomAppTheme.kRaisinBlackSecond,
+          gradient: LinearGradient(
+            colors: [
+              CustomAppTheme.kRaisinBlackSecond,
+              CustomAppTheme.kRaisinPrimaryColor,
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -112,7 +122,14 @@ class ChatScreen extends StatelessWidget {
       child: Container(
         width: double.infinity,
         decoration: const BoxDecoration(
-          color: CustomAppTheme.kRaisinBlackSecond,
+          gradient: LinearGradient(
+            colors: [
+              CustomAppTheme.kRaisinBlackSecond,
+              CustomAppTheme.kRaisinPrimaryColor,
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
         ),
         child: ListView.separated(
           padding: const EdgeInsets.only(
@@ -128,10 +145,7 @@ class ChatScreen extends StatelessWidget {
           itemCount: 4,
           separatorBuilder: (context, index) {
             return const Padding(
-              padding: EdgeInsets.only(
-                top:  CustomAppDimensions.kSizeSmall
-                ),
-              
+              padding: EdgeInsets.only(top: CustomAppDimensions.kSizeSmall),
               child: Divider(
                 thickness: 1,
                 color: CustomAppTheme.kRaisinBlack,

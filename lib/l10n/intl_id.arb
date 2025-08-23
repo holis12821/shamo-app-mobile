@@ -13,6 +13,14 @@
     "@email_address": {
         "description": "Label untuk form email"
     },
+    "phone_number": "Nomor Telepon",
+    "@phone_number": {
+        "description": "Label untuk form nomor telepon"
+    },
+    "hint_phone_number": "Cth. 08xxxxxx",
+    "@hint_phone_number": {
+        "description": "Hint label untuk form nomor telepon"
+    },
     "password": "Password",
     "@password": {
         "description": "Label untuk form Password"
@@ -68,6 +76,14 @@
     "user_name": "@alexkeinn",
     "@user_name": {
         "description": "Username untuk user yang sudah login"
+    },
+    "name": "Nama",
+    "@name": {
+        "description": "Label untuk nama"
+    },
+     "name_username": "Cth. Alex keinnzal",
+    "@name_username": {
+        "description": "Nama pengguna"
     },
     "all_shoes": "Semua Sepatu",
     "@all_shoes": {
@@ -168,5 +184,58 @@
     "find_favorite_shoes": "Mari temukan sepatu favorit Anda",
     "@find_favorite_shoes": {
         "description": "temukan sepatu yang anda suka"
+    },
+    "greetings_welcome_customer": "Hallo, Alex",
+    "@greetings_welcome_customer": {
+        "description": "Sapaan untuk pelanggan"
+    },
+    
+    "account_wording": "Account",
+    "@account_wording": {
+        "description": "Wording untuk Akun"
+    },
+    "edit_profile": "Edit Profil",
+    "@edit_profile": {
+        "description": "Wording untuk Edit Profil"
+    },
+    "your_orders": "Pesanan Anda",
+    "@your_orders": {
+        "description": "Wording untuk Pesanan Anda"
+    },
+    "help": "Bantuan",
+    "@help": {
+        "description": "Wording untuk Bantuan"
+    },
+    "general": "Umum",
+    "@general": {
+        "description": "Wording untuk Umum"
+    },
+    "privacy_policy": "Privasi & Kebijakan",
+    "@privacy_policy": {
+        "description": "Wording untuk Privasi & Kebijakan"
+    },
+    "term_of_service": "Syarat & Ketentuan",
+    "@term_of_service": {
+        "description": "Wording untuk Syarat & Ketentuan"
+    },
+    "rate_app": "Beri Penilaian Aplikasi",
+    "@rate_app": {
+        "description": "Wording untuk Beri Penilaian Aplikasi"
+    },
+    "error_name": "Nama tidak boleh kosong",
+    "@error_name": {
+        "description": "Wording untuk error nama"
+    },
+    "error_username": "Username tidak boleh kosong",
+    "@error_username": {
+        "description": "Wording untuk error username"
+    },
+    "error_email": "Email tidak valid",
+    "@error_email": {
+        "description": "Wording untuk error email"
+    },
+    "error_phone": "Nomor Hp harus 9 - 12 karakter",
+    "@error_phone": {
+        "description": "Wording untuk error nomor telepon"
     }
 }

@@ -179,10 +179,10 @@ class _DetailChatViewState extends State<DetailChatView>
         return ListView.builder(
           controller: _scrollController,
           padding: EdgeInsets.only(
-            top: state.isShowProductPreview ? CustomAppDimensions.kSize18 : 0,
-            left: CustomAppDimensions.kSize18,
-            right: CustomAppDimensions.kSize18,
-            bottom: CustomAppDimensions.kSize18,
+            top: state.isShowProductPreview ? CustomAppDimensions.kSizeMediumSemiMedium : 0,
+            left: CustomAppDimensions.kSizeMediumSemiMedium,
+            right: CustomAppDimensions.kSizeMediumSemiMedium,
+            bottom: CustomAppDimensions.kSizeMediumSemiMedium,
           ),
           itemCount: messages.length + (state.isTyping ? 1 : 0),
           itemBuilder: (context, index) {
@@ -253,6 +253,7 @@ class _DetailChatViewState extends State<DetailChatView>
                       child: Center(
                         child: TextFormField(
                           controller: _controller,
+                          cursorColor: CustomAppTheme.kAntiFlashWhite,
                           style: CustomTextTheme.primaryTextStyle,
                           decoration: InputDecoration.collapsed(
                             hintText: localizations.typing_txt,

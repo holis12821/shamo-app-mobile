@@ -42,7 +42,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: CustomAppTheme.kRaisinBlackSecond,
+      backgroundColor: _selectedIndex == 0 ? CustomAppTheme.kRaisinPrimaryColor : CustomAppTheme.kRaisinBlackSecond,
       body: SafeArea(
         child: AnimatedSwitcher(
           duration: const Duration(milliseconds: 300),
@@ -66,10 +66,10 @@ class _MainScreenState extends State<MainScreen> {
       onPressed: () {},
       shape: const CircleBorder(),
       elevation: CustomAppDimensions.kSize8,
-      backgroundColor: CustomAppTheme.kSecondaryColor,
+      backgroundColor: CustomAppTheme.kSecondaryMainColor,
       child: SvgPicture.asset(
         CustomAssets.icCartWhite,
-        width: CustomAppDimensions.kSize24,
+        width: CustomAppDimensions.kSizeSuperLarge,
       ),
     );
   }

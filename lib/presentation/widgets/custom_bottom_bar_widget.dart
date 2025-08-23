@@ -13,12 +13,15 @@ class CustomBottomBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final heightBottomBar = screenHeight * (60 / screenHeight);
+
     return ClipRRect(
       borderRadius: const BorderRadius.vertical(
         top: Radius.circular(CustomAppDimensions.kSize20),
       ),
       child: BottomAppBar(
-        height: CustomAppDimensions.kSize60,
+        height: heightBottomBar,
         elevation: 0,
         color: CustomAppTheme.kRaisinBlackLight,
         shape: const CircularNotchedRectangle(),
@@ -60,7 +63,7 @@ class CustomBottomBarWidget extends StatelessWidget {
           opacity: isActive ? 1.0 : 0.5,
           duration: const Duration(milliseconds: 300),
           child: SvgPicture.asset(icons[index],
-            width: CustomAppDimensions.kSize24,
+            width: CustomAppDimensions.kSizeSuperLarge,
             colorFilter: ColorFilter.mode(isActive ? CustomAppTheme.kPrimaryColor : CustomAppTheme.kTaupeGray, BlendMode.srcIn),
           ),
         ),

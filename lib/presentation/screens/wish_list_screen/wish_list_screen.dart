@@ -12,24 +12,27 @@ class WishListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final localizations = AppLocalizations.of(context)!;
-    return SafeArea(
-      child: Column(
-        children: [
-          headerWishList(localizations),
-          const Divider(
-            thickness: 1,
-            color: CustomAppTheme.kRaisinPrimaryColor,
-          ),
-          // emptyWishList(localizations),
-          wishlistContent(),
-        ],
+    return Scaffold(
+      appBar: headerWishList(context, localizations),
+      backgroundColor: CustomAppTheme.kRaisinPrimaryColor,
+      body: SafeArea(
+        child: Column(
+          children: [
+            // emptyWishList(localizations),
+            wishlistContent(),
+          ],
+        ),
       ),
     );
   }
 
-  Widget headerWishList(AppLocalizations localizations) {
+  PreferredSizeWidget headerWishList(BuildContext context, AppLocalizations localizations) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final headerHeight = screenHeight * (60 / screenHeight);
+
     return AppBar(
-      backgroundColor: CustomAppTheme.kRaisinBlackSecond,
+      toolbarHeight: headerHeight,
+      backgroundColor: CustomAppTheme.kRaisinPrimaryColor,
       centerTitle: true,
       title: Text(
         localizations.favorite_shoes,
@@ -48,7 +51,14 @@ class WishListScreen extends StatelessWidget {
       child: Container(
         width: double.infinity,
         decoration: const BoxDecoration(
-          color: CustomAppTheme.kRaisinBlackSecond,
+          gradient: LinearGradient(
+            colors: [
+              CustomAppTheme.kRaisinBlackSecond,
+              CustomAppTheme.kRaisinPrimaryColor,
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -80,7 +90,7 @@ class WishListScreen extends StatelessWidget {
                 style: TextButton.styleFrom(
                   padding: const EdgeInsets.symmetric(
                     vertical: CustomAppDimensions.kSize10,
-                    horizontal: CustomAppDimensions.kSize24,
+                    horizontal: CustomAppDimensions.kSizeSuperLarge,
                   ),
                   backgroundColor: CustomAppTheme.kPrimaryColor,
                   shape: RoundedRectangleBorder(
@@ -107,11 +117,18 @@ class WishListScreen extends StatelessWidget {
     return Expanded(
       child: Container(
         decoration: const BoxDecoration(
-          color: CustomAppTheme.kRaisinBlackSecond,
+          gradient: LinearGradient(
+            colors: [
+              CustomAppTheme.kRaisinBlackSecond,
+              CustomAppTheme.kRaisinPrimaryColor,
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
         ),
         child: ListView.builder(
           padding: const EdgeInsets.all(
-            CustomAppDimensions.kSize18,
+            CustomAppDimensions.kSizeMediumSemiMedium,
           ),
           itemCount: 5,
           itemBuilder: (context, index) => const WishlistCardWidget(),

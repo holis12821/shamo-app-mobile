@@ -66,8 +66,8 @@ class _AnimatedCircleCloseButtonWidgetState
         onTapUp: _onTapUp,
         onTapCancel: _onTapCancel,
         child: Container(
-          width: CustomAppDimensions.kSize22,
-          height: CustomAppDimensions.kSize22,
+          width: CustomAppDimensions.kSizeMediumLarge,
+          height: CustomAppDimensions.kSizeMediumLarge,
           decoration: const BoxDecoration(
             color: CustomAppTheme.kPrimaryColor,
             shape: BoxShape.circle,

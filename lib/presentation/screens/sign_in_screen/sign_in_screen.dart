@@ -174,7 +174,7 @@ Widget build(BuildContext context) {
                 children: [
                   SvgPicture.asset(
                     'assets/icons/ic_password.svg',
-                    width: CustomAppDimensions.kSize18,
+                    width: CustomAppDimensions.kSizeMediumSemiMedium,
                   ),
                   const SizedBox(width: CustomAppDimensions.kSizeLarge),
                   Expanded(
@@ -206,7 +206,7 @@ Widget build(BuildContext context) {
       ),
       child: TextButton(
         onPressed: () {
-          Navigator.pushNamed(context, '/home');
+          Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
         },
         style: TextButton.styleFrom(
           backgroundColor: CustomAppTheme.kPrimaryColor,

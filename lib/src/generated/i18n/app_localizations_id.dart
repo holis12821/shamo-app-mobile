@@ -18,6 +18,12 @@ class AppLocalizationsId extends AppLocalizations {
   String get email_address => 'Alamat Email';
 
   @override
+  String get phone_number => 'Nomor Telepon';
+
+  @override
+  String get hint_phone_number => 'Cth. 08xxxxxx';
+
+  @override
   String get password => 'Password';
 
   @override
@@ -58,6 +64,12 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get user_name => '@alexkeinn';
+
+  @override
+  String get name => 'Nama';
+
+  @override
+  String get name_username => 'Cth. Alex keinnzal';
 
   @override
   String get all_shoes => 'Semua Sepatu';
@@ -134,4 +146,43 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get find_favorite_shoes => 'Mari temukan sepatu favorit Anda';
+
+  @override
+  String get greetings_welcome_customer => 'Hallo, Alex';
+
+  @override
+  String get account_wording => 'Account';
+
+  @override
+  String get edit_profile => 'Edit Profil';
+
+  @override
+  String get your_orders => 'Pesanan Anda';
+
+  @override
+  String get help => 'Bantuan';
+
+  @override
+  String get general => 'Umum';
+
+  @override
+  String get privacy_policy => 'Privasi & Kebijakan';
+
+  @override
+  String get term_of_service => 'Syarat & Ketentuan';
+
+  @override
+  String get rate_app => 'Beri Penilaian Aplikasi';
+
+  @override
+  String get error_name => 'Nama tidak boleh kosong';
+
+  @override
+  String get error_username => 'Username tidak boleh kosong';
+
+  @override
+  String get error_email => 'Email tidak valid';
+
+  @override
+  String get error_phone => 'Nomor Hp harus 9 - 12 karakter';
 }

@@ -33,7 +33,7 @@ class HeaderWidget extends StatelessWidget {
                   maxLines: 1,
                   localization.greetings_hello,
                   style: CustomTextTheme.primaryTextStyle.copyWith(
-                    fontSize: CustomAppDimensions.kSize24,
+                    fontSize: CustomAppDimensions.kSizeSuperLarge,
                     fontWeight: CustomTextTheme.semiBold,
                     overflow: TextOverflow.ellipsis,
                   ),

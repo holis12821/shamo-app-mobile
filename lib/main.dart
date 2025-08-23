@@ -21,8 +21,9 @@ class MyApp extends StatelessWidget {
       routes: AppRoute.routeHandler,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          primary: CustomAppTheme.kRaisinBlackSecond,
-          seedColor: CustomAppTheme.kRaisinBlackSecond,
+          primary: CustomAppTheme.kRaisinPrimaryColor,
+          secondary: CustomAppTheme.kRaisinBlackSecond,
+          seedColor: CustomAppTheme.kRaisinBlackLight,
         ),
         useMaterial3: true,
       ),

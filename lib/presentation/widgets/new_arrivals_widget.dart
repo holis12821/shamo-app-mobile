@@ -46,6 +46,7 @@ class NewArrivalsWidget extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(top: CustomAppDimensions.kSizeMedium),
       child: ListView.builder(
+        physics: const NeverScrollableScrollPhysics(),
         padding: const EdgeInsets.only(
           left: CustomAppDimensions.kSizeMediumLarge,
           right: CustomAppDimensions.kSizeMediumLarge,

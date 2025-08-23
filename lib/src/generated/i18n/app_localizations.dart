@@ -116,6 +116,18 @@ abstract class AppLocalizations {
   /// **'Alamat Email'**
   String get email_address;
 
+  /// Label untuk form nomor telepon
+  ///
+  /// In id, this message translates to:
+  /// **'Nomor Telepon'**
+  String get phone_number;
+
+  /// Hint label untuk form nomor telepon
+  ///
+  /// In id, this message translates to:
+  /// **'Cth. 08xxxxxx'**
+  String get hint_phone_number;
+
   /// Label untuk form Password
   ///
   /// In id, this message translates to:
@@ -199,6 +211,18 @@ abstract class AppLocalizations {
   /// In id, this message translates to:
   /// **'@alexkeinn'**
   String get user_name;
+
+  /// Label untuk nama
+  ///
+  /// In id, this message translates to:
+  /// **'Nama'**
+  String get name;
+
+  /// Nama pengguna
+  ///
+  /// In id, this message translates to:
+  /// **'Cth. Alex keinnzal'**
+  String get name_username;
 
   /// Title untuk kategori semua sepatu
   ///
@@ -349,6 +373,84 @@ abstract class AppLocalizations {
   /// In id, this message translates to:
   /// **'Mari temukan sepatu favorit Anda'**
   String get find_favorite_shoes;
+
+  /// Sapaan untuk pelanggan
+  ///
+  /// In id, this message translates to:
+  /// **'Hallo, Alex'**
+  String get greetings_welcome_customer;
+
+  /// Wording untuk Akun
+  ///
+  /// In id, this message translates to:
+  /// **'Account'**
+  String get account_wording;
+
+  /// Wording untuk Edit Profil
+  ///
+  /// In id, this message translates to:
+  /// **'Edit Profil'**
+  String get edit_profile;
+
+  /// Wording untuk Pesanan Anda
+  ///
+  /// In id, this message translates to:
+  /// **'Pesanan Anda'**
+  String get your_orders;
+
+  /// Wording untuk Bantuan
+  ///
+  /// In id, this message translates to:
+  /// **'Bantuan'**
+  String get help;
+
+  /// Wording untuk Umum
+  ///
+  /// In id, this message translates to:
+  /// **'Umum'**
+  String get general;
+
+  /// Wording untuk Privasi & Kebijakan
+  ///
+  /// In id, this message translates to:
+  /// **'Privasi & Kebijakan'**
+  String get privacy_policy;
+
+  /// Wording untuk Syarat & Ketentuan
+  ///
+  /// In id, this message translates to:
+  /// **'Syarat & Ketentuan'**
+  String get term_of_service;
+
+  /// Wording untuk Beri Penilaian Aplikasi
+  ///
+  /// In id, this message translates to:
+  /// **'Beri Penilaian Aplikasi'**
+  String get rate_app;
+
+  /// Wording untuk error nama
+  ///
+  /// In id, this message translates to:
+  /// **'Nama tidak boleh kosong'**
+  String get error_name;
+
+  /// Wording untuk error username
+  ///
+  /// In id, this message translates to:
+  /// **'Username tidak boleh kosong'**
+  String get error_username;
+
+  /// Wording untuk error email
+  ///
+  /// In id, this message translates to:
+  /// **'Email tidak valid'**
+  String get error_email;
+
+  /// Wording untuk error nomor telepon
+  ///
+  /// In id, this message translates to:
+  /// **'Nomor Hp harus 9 - 12 karakter'**
+  String get error_phone;
 }
 
 class _AppLocalizationsDelegate

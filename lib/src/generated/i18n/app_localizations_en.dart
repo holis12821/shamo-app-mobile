@@ -18,6 +18,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get email_address => 'Email Address';
 
   @override
+  String get phone_number => 'Phone Number';
+
+  @override
+  String get hint_phone_number => 'E.g. 08xxxxxx';
+
+  @override
   String get password => 'Password';
 
   @override
@@ -58,6 +64,12 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get user_name => '@alexkeinn';
+
+  @override
+  String get name => 'Name';
+
+  @override
+  String get name_username => 'Cth. Alex keinnzal';
 
   @override
   String get all_shoes => 'All Shoes';
@@ -134,4 +146,43 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get find_favorite_shoes => 'Let\'s find your favorite shoes';
+
+  @override
+  String get greetings_welcome_customer => 'Hello, Alex';
+
+  @override
+  String get account_wording => 'Account';
+
+  @override
+  String get edit_profile => 'Edit Profile';
+
+  @override
+  String get your_orders => 'Your Orders';
+
+  @override
+  String get help => 'Help';
+
+  @override
+  String get general => 'General';
+
+  @override
+  String get privacy_policy => 'Privacy & Policy';
+
+  @override
+  String get term_of_service => 'Terms of Service';
+
+  @override
+  String get rate_app => 'Rate App';
+
+  @override
+  String get error_name => 'Name is required';
+
+  @override
+  String get error_username => 'Username is required';
+
+  @override
+  String get error_email => 'Email is invalid';
+
+  @override
+  String get error_phone => 'Mobile phone numbers must be 9-12 characters';
 }
