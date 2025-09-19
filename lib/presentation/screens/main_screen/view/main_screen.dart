@@ -3,10 +3,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shamoapps/core/theme/custom_app_dimensions.dart';
 import 'package:shamoapps/core/theme/custom_app_theme.dart';
 import 'package:shamoapps/core/theme/custom_assets.dart';
-import 'package:shamoapps/presentation/screens/chat_screen/chat_screen.dart';
-import 'package:shamoapps/presentation/screens/home_screen/home_screen.dart';
-import 'package:shamoapps/presentation/screens/profile_screen/profile_screen.dart';
-import 'package:shamoapps/presentation/screens/wish_list_screen/wish_list_screen.dart';
+import 'package:shamoapps/presentation/screens/chat_screen/view/chat_screen.dart';
+import 'package:shamoapps/presentation/screens/home_screen/view/home_screen.dart';
+import 'package:shamoapps/presentation/screens/profile_screen/view/profile_screen.dart';
+import 'package:shamoapps/presentation/screens/wish_list_screen/view/wish_list_screen.dart';
 import 'package:shamoapps/presentation/widgets/custom_bottom_bar_widget.dart';
 
 class MainScreen extends StatefulWidget {
@@ -42,7 +42,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: _selectedIndex == 0 ? CustomAppTheme.kRaisinPrimaryColor : CustomAppTheme.kRaisinBlackSecond,
+      backgroundColor:CustomAppTheme.kRaisinPrimaryColor,
       body: SafeArea(
         child: AnimatedSwitcher(
           duration: const Duration(milliseconds: 300),
@@ -68,7 +68,7 @@ class _MainScreenState extends State<MainScreen> {
       elevation: CustomAppDimensions.kSize8,
       backgroundColor: CustomAppTheme.kSecondaryMainColor,
       child: SvgPicture.asset(
-        CustomAssets.icCartWhite,
+        CustomAssets.kIconCartWhite,
         width: CustomAppDimensions.kSizeSuperLarge,
       ),
     );

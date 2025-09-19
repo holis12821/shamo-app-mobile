@@ -60,7 +60,7 @@ class ProductItemWidget extends StatelessWidget {
                   child: getImageProvider(
                     width: CustomAppDimensions.kSize70,
                     height: CustomAppDimensions.kSize70,
-                    imageUrl ?? CustomAssets.kShoesImage,
+                    imageUrl ?? CustomAssets.kShoesNikeDetail,
                   ),
                 ),
                 const SizedBox(

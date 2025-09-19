@@ -22,4 +22,5 @@ class CustomAppTheme {
   static const kRaisinBlackSecond = Color(0xFF242231);
   static const kEmerald = Color(0xFF51C17E);
   static const kSpaceCadet = Color(0xFF2B2844);
+  static const kSilver = Color(0xFFC4C4C4);
 }

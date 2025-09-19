@@ -237,5 +237,21 @@
     "error_phone": "Nomor Hp harus 9 - 12 karakter",
     "@error_phone": {
         "description": "Wording untuk error nomor telepon"
+    },
+    "price_start_from": "Harga mulai dari",
+    "@price_start_from": {
+        "description": "Wording untuk harga mulai dari"
+    },
+    "description": "Deskripsi",
+    "@description": {
+        "description": "Deskripsi untuk menjelaskan sesuatu"
+    },
+    "product_description": "Jalan setapak yang belum diaspal dan permukaan campuran menjadi mudah ketika Anda memiliki traksi dan dukungan yang Anda butuhkan. Cukup santai untuk perjalanan sehari-hari.",
+    "@product_description": {
+        "description": "Deskripsi produk"
+    },
+    "familiar_shoes": "Sepatu Familiar",
+    "@familiar_shoes": {
+        "description": "Wording untuk Sepatu Familiar"
     }
 }

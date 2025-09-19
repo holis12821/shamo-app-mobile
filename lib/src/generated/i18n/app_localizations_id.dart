@@ -185,4 +185,17 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get error_phone => 'Nomor Hp harus 9 - 12 karakter';
+
+  @override
+  String get price_start_from => 'Harga mulai dari';
+
+  @override
+  String get description => 'Deskripsi';
+
+  @override
+  String get product_description =>
+      'Jalan setapak yang belum diaspal dan permukaan campuran menjadi mudah ketika Anda memiliki traksi dan dukungan yang Anda butuhkan. Cukup santai untuk perjalanan sehari-hari.';
+
+  @override
+  String get familiar_shoes => 'Sepatu Familiar';
 }

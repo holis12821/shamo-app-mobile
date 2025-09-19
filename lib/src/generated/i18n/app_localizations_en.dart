@@ -185,4 +185,17 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get error_phone => 'Mobile phone numbers must be 9-12 characters';
+
+  @override
+  String get price_start_from => 'Price start from';
+
+  @override
+  String get description => 'Description';
+
+  @override
+  String get product_description =>
+      'Unpaved trails and mixed surfaces are easy when you have the traction and support you need. Casual enough for the daily commute.';
+
+  @override
+  String get familiar_shoes => 'Familiar Shoes';
 }

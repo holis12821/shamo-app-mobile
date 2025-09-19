@@ -58,5 +58,9 @@
     "error_name": "Name is required",
     "error_username": "Username is required",
     "error_email": "Email is invalid",
-    "error_phone": "Mobile phone numbers must be 9-12 characters"
+    "error_phone": "Mobile phone numbers must be 9-12 characters",
+    "price_start_from": "Price start from",
+    "description": "Description",
+    "product_description": "Unpaved trails and mixed surfaces are easy when you have the traction and support you need. Casual enough for the daily commute.",
+    "familiar_shoes": "Familiar Shoes"
 }

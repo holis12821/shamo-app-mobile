@@ -451,6 +451,30 @@ abstract class AppLocalizations {
   /// In id, this message translates to:
   /// **'Nomor Hp harus 9 - 12 karakter'**
   String get error_phone;
+
+  /// Wording untuk harga mulai dari
+  ///
+  /// In id, this message translates to:
+  /// **'Harga mulai dari'**
+  String get price_start_from;
+
+  /// Deskripsi untuk menjelaskan sesuatu
+  ///
+  /// In id, this message translates to:
+  /// **'Deskripsi'**
+  String get description;
+
+  /// Deskripsi produk
+  ///
+  /// In id, this message translates to:
+  /// **'Jalan setapak yang belum diaspal dan permukaan campuran menjadi mudah ketika Anda memiliki traksi dan dukungan yang Anda butuhkan. Cukup santai untuk perjalanan sehari-hari.'**
+  String get product_description;
+
+  /// Wording untuk Sepatu Familiar
+  ///
+  /// In id, this message translates to:
+  /// **'Sepatu Familiar'**
+  String get familiar_shoes;
 }
 
 class _AppLocalizationsDelegate

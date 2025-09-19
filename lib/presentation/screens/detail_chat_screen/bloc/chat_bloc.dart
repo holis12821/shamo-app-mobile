@@ -2,8 +2,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shamoapps/core/theme/custom_assets.dart';
 import 'package:shamoapps/domain/entity/chat.dart';
 import 'package:shamoapps/domain/entity/product.dart';
-import 'package:shamoapps/presentation/screens/detail_chat/bloc/chat_event.dart';
-import 'package:shamoapps/presentation/screens/detail_chat/bloc/chat_state.dart';
+import 'package:shamoapps/presentation/screens/detail_chat_screen/bloc/chat_event.dart';
+import 'package:shamoapps/presentation/screens/detail_chat_screen/bloc/chat_state.dart';
 
 class ChatBloc extends Bloc<ChatEvent, ChatState> {
   ChatBloc() : super(ChatState.initial()) {

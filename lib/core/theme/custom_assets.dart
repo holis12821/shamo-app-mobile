@@ -1,10 +1,14 @@
 class CustomAssets {
-  static var icCartWhite = "assets/icons/ic_cart_white.svg";
+  static var kIconBackPrimary = "assets/icons/ic_arrow_left.svg";
+  static var kIconCartWhite = "assets/icons/ic_cart_white.svg";
   static const kIconLogo = 'assets/images/nike_logo.png';
   static const kIconHome = 'assets/icons/ic_home.svg';
   static const kIconChat = 'assets/icons/ic_chat.svg';
   static const kIconWishlist = 'assets/icons/ic_wishlist.svg';
   static const kIconProfile = 'assets/icons/ic_profile_grey.svg';
   static const kShoesImage = 'assets/images/shoes.png';
+  static const kShoesNikeDetail = 'assets/images/shoes_nike_detail_1.png';
   static const kIconHeadset = 'assets/images/ic_headset.png';
+  static const kIconCartBadgePrimary = 'assets/icons/ic_cart_badge_primary.svg';
+  static const kIconWishlistNonActive = 'assets/icons/ic_wishlist_non_active.svg';
 }
