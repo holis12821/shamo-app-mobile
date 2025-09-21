@@ -12,6 +12,6 @@ class AppRoute {
     '/home': (context) => const MainScreen(),
     '/detail-chat': (context) => const DetailChatScreen(),
     '/edit-profile': (context) => const EditProfileScreen(),
-    '/product': (context) => ProductDetailScreen(),
+    '/product': (context) => const ProductDetailScreen(),
   };
 }

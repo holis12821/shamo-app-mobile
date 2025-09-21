@@ -165,6 +165,14 @@
     "@add_to_cart": {
         "description": "Wording Tambahkan ke Keranjang"
     },
+    "add_to_wishlist": "Produk telah ditambahkan ke Wishlist",
+    "@add_to_wishlist": {
+        "description": "Wording Tambahkan ke Daftar wishlist"
+    },
+    "remove_from_wishlist": "Produk telah dihapus dari Wishlist",
+    "@remove_from_wishlist": {
+        "description": "Wording Hapus dari Daftar wishlist"
+    },
     "buy_now": "Beli Sekarang",
     "@buy_now": {
         "description": "Wording Beli Sekarang"
@@ -253,5 +261,17 @@
     "familiar_shoes": "Sepatu Familiar",
     "@familiar_shoes": {
         "description": "Wording untuk Sepatu Familiar"
+    },
+    "wording_dialog_information": "Hore :)",
+    "@wording_dialog_information": {
+        "description": "Wording untuk dialog informasi"
+    },
+    "item_added_successfully": "Item berhasil ditambahkan",
+    "@item_added_successfully": {
+        "description": "Wording untuk item berhasil ditambahkan"
+    },
+    "view_my_cart": "Lihat Keranjang",
+    "@view_my_cart": {
+        "description": "Wording untuk melihat keranjang"
     }
 }

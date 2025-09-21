@@ -344,6 +344,18 @@ abstract class AppLocalizations {
   /// **'Add to Cart'**
   String get add_to_cart;
 
+  /// Wording Tambahkan ke Daftar wishlist
+  ///
+  /// In id, this message translates to:
+  /// **'Produk telah ditambahkan ke Wishlist'**
+  String get add_to_wishlist;
+
+  /// Wording Hapus dari Daftar wishlist
+  ///
+  /// In id, this message translates to:
+  /// **'Produk telah dihapus dari Wishlist'**
+  String get remove_from_wishlist;
+
   /// Wording Beli Sekarang
   ///
   /// In id, this message translates to:
@@ -475,6 +487,24 @@ abstract class AppLocalizations {
   /// In id, this message translates to:
   /// **'Sepatu Familiar'**
   String get familiar_shoes;
+
+  /// Wording untuk dialog informasi
+  ///
+  /// In id, this message translates to:
+  /// **'Hore :)'**
+  String get wording_dialog_information;
+
+  /// Wording untuk item berhasil ditambahkan
+  ///
+  /// In id, this message translates to:
+  /// **'Item berhasil ditambahkan'**
+  String get item_added_successfully;
+
+  /// Wording untuk melihat keranjang
+  ///
+  /// In id, this message translates to:
+  /// **'Lihat Keranjang'**
+  String get view_my_cart;
 }
 
 class _AppLocalizationsDelegate

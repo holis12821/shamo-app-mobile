@@ -10,5 +10,7 @@ class CustomAssets {
   static const kShoesNikeDetail = 'assets/images/shoes_nike_detail_1.png';
   static const kIconHeadset = 'assets/images/ic_headset.png';
   static const kIconCartBadgePrimary = 'assets/icons/ic_cart_badge_primary.svg';
+  static const kIconWishlistActive = 'assets/icons/ic_wishlist_active.svg';
   static const kIconWishlistNonActive = 'assets/icons/ic_wishlist_non_active.svg';
+  static const kIconCheckList = 'assets/icons/ic_check_list.svg';
 }

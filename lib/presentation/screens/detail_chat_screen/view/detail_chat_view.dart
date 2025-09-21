@@ -29,6 +29,7 @@ class _DetailChatViewState extends State<DetailChatView>
     with TickerProviderStateMixin {
   final ScrollController _scrollController = ScrollController();
   final TextEditingController _controller = TextEditingController();
+  final FocusNode _focusNode = FocusNode();
   Timer? _scrollDebounce;
   bool _isSending = false;
 
@@ -37,6 +38,8 @@ class _DetailChatViewState extends State<DetailChatView>
     super.initState();
     _scrollController.addListener(_handleScroll);
     WidgetsBinding.instance.addPostFrameCallback((_) {
+      FocusScope.of(context).requestFocus(_focusNode);
+
       context.read<ChatBloc>().add(ProductPreview(true));
       _scrollToBottom();
     });
@@ -44,6 +47,7 @@ class _DetailChatViewState extends State<DetailChatView>
 
   @override
   void dispose() {
+    _focusNode.dispose();
     _scrollDebounce?.cancel();
     _scrollController.dispose();
     _controller.dispose();
@@ -66,13 +70,13 @@ class _DetailChatViewState extends State<DetailChatView>
         if (mounted) setState(() => _isSending = false);
       });
 
-      _scrollToBottom();
+      _scrollToBottom(isWaitFrame: true);
     }
   }
 
-  void _scrollToBottom() {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (_scrollController.hasClients) {
+  void _scrollToBottom({bool isWaitFrame = false}) {
+    void action() {
+       if (_scrollController.hasClients) {
         Future.delayed(const Duration(milliseconds: 150), () {
           _scrollController.animateTo(
             _scrollController.position.maxScrollExtent,
@@ -81,7 +85,13 @@ class _DetailChatViewState extends State<DetailChatView>
           );
         });
       }
-    });
+    }
+
+    if (isWaitFrame) {
+      WidgetsBinding.instance.addPostFrameCallback((_) => action());
+    } else {
+      action();
+    }
   }
 
   @override
@@ -101,7 +111,7 @@ class _DetailChatViewState extends State<DetailChatView>
           await SoundHelper.playSendSound();
         }
 
-        _scrollToBottom();
+        _scrollToBottom(isWaitFrame: true);
       },
       child: Scaffold(
         resizeToAvoidBottomInset: true,
@@ -253,6 +263,7 @@ class _DetailChatViewState extends State<DetailChatView>
                       child: Center(
                         child: TextFormField(
                           controller: _controller,
+                          focusNode: _focusNode,
                           cursorColor: CustomAppTheme.kAntiFlashWhite,
                           style: CustomTextTheme.primaryTextStyle,
                           decoration: InputDecoration.collapsed(

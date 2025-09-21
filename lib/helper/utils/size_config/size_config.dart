@@ -21,4 +21,8 @@ class SizeConfig {
   static double height({required double designHeightPx}) {
     return (designHeightPx / defaultHeight) * screenHeight;
   }
+
+  static double widthTimesMargin({required double designWidthPx}) {
+    return screenWidth - (2 * designWidthPx);
+  }
 }

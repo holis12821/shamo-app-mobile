@@ -132,6 +132,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get add_to_cart => 'Add to Cart';
 
   @override
+  String get add_to_wishlist => 'Product has been added to Wishlist';
+
+  @override
+  String get remove_from_wishlist => 'Product has been removed from Wishlist';
+
+  @override
   String get buy_now => 'Buy Now';
 
   @override
@@ -198,4 +204,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get familiar_shoes => 'Familiar Shoes';
+
+  @override
+  String get wording_dialog_information => 'Hooray :)';
+
+  @override
+  String get item_added_successfully => 'Item added successfully';
+
+  @override
+  String get view_my_cart => 'View My Cart';
 }

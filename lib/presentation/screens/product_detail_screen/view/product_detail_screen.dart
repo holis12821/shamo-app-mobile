@@ -6,6 +6,7 @@ import 'package:shamoapps/core/theme/custom_app_theme.dart';
 import 'package:shamoapps/core/theme/custom_assets.dart';
 import 'package:shamoapps/core/theme/custom_text_theme.dart';
 import 'package:shamoapps/helper/utils/size_config/size_config.dart';
+import 'package:shamoapps/presentation/widgets/dialog_information.dart';
 import 'package:shamoapps/src/generated/i18n/app_localizations.dart';
 
 class ProductDetailScreen extends StatefulWidget {
@@ -18,6 +19,7 @@ class ProductDetailScreen extends StatefulWidget {
 class _ProductDetailScreenState extends State<ProductDetailScreen> {
   final _carouselController = CarouselSliderController();
   var _currentIndex = 0;
+  var _isWishlist = false;
 
   final imageProducts = [
     "assets/images/shoes_nike_detail_1.png",
@@ -40,6 +42,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: CustomAppTheme.kAntiFlashWhite,
+        surfaceTintColor: CustomAppTheme.kAntiFlashWhite,
         automaticallyImplyLeading: false,
         elevation: 0,
         leading: headerSection(context),
@@ -49,100 +52,105 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
       ),
       backgroundColor: CustomAppTheme.kAntiFlashWhite,
       body: SafeArea(
-          child: Column(
-        children: [
-          // Slider
-          carouselSlider(),
-          const SizedBox(height: CustomAppDimensions.kSizeLarge),
-          dotsIndicator(),
-          const SizedBox(height: CustomAppDimensions.kSize17),
-          Expanded(
-            child: Container(
-              padding: const EdgeInsets.only(
-                top: CustomAppDimensions.kSize30,
-              ),
-              decoration: const BoxDecoration(
-                color: CustomAppTheme.kRaisinPrimaryColor,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(CustomAppDimensions.kSizeSuperLarge),
-                  topRight:
-                      Radius.circular(CustomAppDimensions.kSizeSuperLarge),
+        child: Column(
+          children: [
+            // Slider
+            carouselSlider(),
+            const SizedBox(height: CustomAppDimensions.kSizeLarge),
+            dotsIndicator(),
+            const SizedBox(height: CustomAppDimensions.kSize17),
+            Expanded(
+              child: Container(
+                padding: const EdgeInsets.only(
+                  top: CustomAppDimensions.kSize30,
                 ),
-              ),
-              child: Column(
-                children: [
-                  Expanded(
-                    child: SingleChildScrollView(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          sectionProductName(localizations),
-                          const SizedBox(
-                              height: CustomAppDimensions.kSizeLarge),
-                          sectionProductPrice(localizations),
-                          const SizedBox(height: CustomAppDimensions.kSize30),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: CustomAppDimensions.kSizeLarge),
-                            child: Text(
-                              localizations.description,
-                              style: CustomTextTheme.primaryTextStyle.copyWith(
-                                fontSize: CustomAppDimensions.kSizeMedium,
-                                fontWeight: FontWeight.w500,
+                decoration: const BoxDecoration(
+                  color: CustomAppTheme.kRaisinPrimaryColor,
+                  borderRadius: BorderRadius.only(
+                    topLeft:
+                        Radius.circular(CustomAppDimensions.kSizeSuperLarge),
+                    topRight:
+                        Radius.circular(CustomAppDimensions.kSizeSuperLarge),
+                  ),
+                ),
+                child: Column(
+                  children: [
+                    Expanded(
+                      child: SingleChildScrollView(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            sectionProductName(localizations),
+                            const SizedBox(
+                                height: CustomAppDimensions.kSizeLarge),
+                            sectionProductPrice(localizations),
+                            const SizedBox(height: CustomAppDimensions.kSize30),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: CustomAppDimensions.kSizeLarge),
+                              child: Text(
+                                localizations.description,
+                                style:
+                                    CustomTextTheme.primaryTextStyle.copyWith(
+                                  fontSize: CustomAppDimensions.kSizeMedium,
+                                  fontWeight: CustomTextTheme.medium,
+                                ),
                               ),
                             ),
-                          ),
-                          const SizedBox(
-                              height: CustomAppDimensions.kSizeSmall),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: CustomAppDimensions.kSizeLarge),
-                            child: Text(
-                              localizations.product_description,
-                              style: CustomTextTheme.subtitleTextStyle.copyWith(
-                                fontSize: CustomAppDimensions.kSizeMedium,
-                                fontWeight: FontWeight.w300,
+                            const SizedBox(
+                                height: CustomAppDimensions.kSizeSmall),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: CustomAppDimensions.kSizeLarge),
+                              child: Text(
+                                localizations.product_description,
+                                style:
+                                    CustomTextTheme.subtitleTextStyle.copyWith(
+                                  fontSize: CustomAppDimensions.kSizeMedium,
+                                  fontWeight: CustomTextTheme.light,
+                                ),
                               ),
                             ),
-                          ),
-                          const SizedBox(height: CustomAppDimensions.kSize30),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: CustomAppDimensions.kSizeLarge),
-                            child: Text(
-                              localizations.familiar_shoes,
-                              style: CustomTextTheme.primaryTextStyle.copyWith(
-                                fontSize: CustomAppDimensions.kSizeMedium,
-                                fontWeight: FontWeight.w500,
+                            const SizedBox(height: CustomAppDimensions.kSize30),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: CustomAppDimensions.kSizeLarge),
+                              child: Text(
+                                localizations.familiar_shoes,
+                                style:
+                                    CustomTextTheme.primaryTextStyle.copyWith(
+                                  fontSize: CustomAppDimensions.kSizeMedium,
+                                  fontWeight: CustomTextTheme.medium,
+                                ),
                               ),
                             ),
-                          ),
-                          const SizedBox(
-                              height: CustomAppDimensions.kSizeSmall),
-                          SizedBox(
-                            height: SizeConfig.height(
-                                designHeightPx: CustomAppDimensions.kSize54),
-                            child: ListView.builder(
-                              scrollDirection: Axis.horizontal,
-                              itemCount: imageProducts.length,
-                              itemBuilder: (context, index) {
-                                return familiarShoesSection(index);
-                              },
+                            const SizedBox(
+                                height: CustomAppDimensions.kSizeSmall),
+                            SizedBox(
+                              height: SizeConfig.height(
+                                  designHeightPx: CustomAppDimensions.kSize54),
+                              child: ListView.builder(
+                                scrollDirection: Axis.horizontal,
+                                itemCount: imageProducts.length,
+                                itemBuilder: (context, index) {
+                                  return familiarShoesSection(context, index);
+                                },
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                  const SizedBox(height: CustomAppDimensions.kSize10),
-                  sectionButton(localizations),
-                  const SizedBox(height: CustomAppDimensions.kSize10),
-                ],
+                    const SizedBox(height: CustomAppDimensions.kSize10),
+                    sectionButton(localizations),
+                    const SizedBox(height: CustomAppDimensions.kSize10),
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
-      )),
+          ],
+        ),
+      ),
     );
   }
 
@@ -232,7 +240,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                 maxLines: 1,
                 style: CustomTextTheme.primaryTextStyle.copyWith(
                   fontSize: CustomAppDimensions.kSizeMediumSemiMedium,
-                  fontWeight: FontWeight.w600,
+                  fontWeight: CustomTextTheme.semiBold,
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
@@ -240,15 +248,47 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                 localizations.hiking_shoes,
                 style: CustomTextTheme.secondaryTextStyle.copyWith(
                   fontSize: CustomAppDimensions.kSizeSmall,
-                  fontWeight: FontWeight.w400,
+                  fontWeight: CustomTextTheme.regular,
                 ),
               ),
             ],
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              setState(() {
+                _isWishlist = !_isWishlist;
+              });
+
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  backgroundColor: _isWishlist
+                      ? CustomAppTheme.kMoonstone
+                      : CustomAppTheme.kAlertColor,
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(
+                        CustomAppDimensions.kSize8,
+                      ),
+                    ),
+                  ),
+                  content: Text(
+                    _isWishlist
+                        ? localizations.add_to_wishlist
+                        : localizations.remove_from_wishlist,
+                    style: CustomTextTheme.primaryTextStyle.copyWith(
+                      fontSize: CustomAppDimensions.kSizeMedium,
+                      fontWeight: CustomTextTheme.regular,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  duration: const Duration(seconds: 1),
+                ),
+              );
+            },
             icon: SvgPicture.asset(
-              CustomAssets.kIconWishlistNonActive,
+              _isWishlist
+                  ? CustomAssets.kIconWishlistActive
+                  : CustomAssets.kIconWishlistNonActive,
               width: CustomAppDimensions.kSize46,
               height: CustomAppDimensions.kSize46,
             ),
@@ -280,14 +320,14 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
             localizations.price_start_from,
             style: CustomTextTheme.primaryTextStyle.copyWith(
               fontSize: CustomAppDimensions.kSizeMedium,
-              fontWeight: FontWeight.w400,
+              fontWeight: CustomTextTheme.regular,
             ),
           ),
           Text(
             localizations.price_nominal,
             style: CustomTextTheme.priceTextStyle.copyWith(
               fontSize: CustomAppDimensions.kSizeMedium,
-              fontWeight: FontWeight.w400,
+              fontWeight: CustomTextTheme.regular,
             ),
           )
         ],
@@ -295,14 +335,23 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
     );
   }
 
-  Container familiarShoesSection(int index) {
-    return Container(
-      margin: const EdgeInsets.only(left: CustomAppDimensions.kSizeLarge),
-      width: SizeConfig.width(designWidthPx: CustomAppDimensions.kSize54),
-      decoration: BoxDecoration(
+  Widget familiarShoesSection(BuildContext context, int index) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, '/product');
+      },
+      child: Container(
+        margin: const EdgeInsets.only(left: CustomAppDimensions.kSizeLarge),
+        width: SizeConfig.width(designWidthPx: CustomAppDimensions.kSize54),
+        decoration: BoxDecoration(
           color: CustomAppTheme.kAntiFlashWhite,
           borderRadius: BorderRadius.circular(CustomAppDimensions.kSize6),
-          image: DecorationImage(image: AssetImage(imageProducts[index]))),
+          image: DecorationImage(
+            image: AssetImage(imageProducts[index]),
+            fit: BoxFit.cover,
+          ),
+        ),
+      ),
     );
   }
 
@@ -315,7 +364,9 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
       child: Row(
         children: [
           OutlinedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/detail-chat');
+            },
             style: OutlinedButton.styleFrom(
               side: const BorderSide(
                 color: CustomAppTheme.kPrimaryColor,
@@ -350,12 +401,14 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                   vertical: CustomAppDimensions.kSizeLarge,
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                showDialogInformation(context);
+              },
               child: Text(
                 localizations.add_to_cart,
                 style: CustomTextTheme.primaryTextStyle.copyWith(
                   fontSize: CustomAppDimensions.kSizeLarge,
-                  fontWeight: FontWeight.w600,
+                  fontWeight: CustomTextTheme.semiBold,
                 ),
               ),
             ),

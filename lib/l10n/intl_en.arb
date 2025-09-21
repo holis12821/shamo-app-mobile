@@ -41,6 +41,8 @@
     "typing_txt": "Type Message...",
     "product_name": "COURT VISION 2.0 SHOES",
     "add_to_cart": "Add to Cart",
+    "add_to_wishlist": "Product has been added to Wishlist",
+    "remove_from_wishlist": "Product has been removed from Wishlist",
     "buy_now": "Buy Now",
     "chat_message": "Good night, This item is only available in size 42 and 43",
     "favorite_shoes": "Favorite Shoes",
@@ -62,5 +64,8 @@
     "price_start_from": "Price start from",
     "description": "Description",
     "product_description": "Unpaved trails and mixed surfaces are easy when you have the traction and support you need. Casual enough for the daily commute.",
-    "familiar_shoes": "Familiar Shoes"
+    "familiar_shoes": "Familiar Shoes",
+    "wording_dialog_information": "Hooray :)",
+    "item_added_successfully": "Item added successfully",
+    "view_my_cart": "View My Cart"
 }
