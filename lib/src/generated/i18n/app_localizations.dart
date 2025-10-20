@@ -505,6 +505,42 @@ abstract class AppLocalizations {
   /// In id, this message translates to:
   /// **'Lihat Keranjang'**
   String get view_my_cart;
+
+  /// Wording untuk judul keranjang
+  ///
+  /// In id, this message translates to:
+  /// **'Keranjang Belanja'**
+  String get cart_title;
+
+  /// Wording untuk keranjang kosong
+  ///
+  /// In id, this message translates to:
+  /// **'Maaf! Keranjang Belanja Anda Kosong.'**
+  String get your_cart_empty;
+
+  /// Wording untuk jumlah item di keranjang
+  ///
+  /// In id, this message translates to:
+  /// **'2'**
+  String get count_cart;
+
+  /// Wording untuk menghapus item
+  ///
+  /// In id, this message translates to:
+  /// **'Hapus'**
+  String get remove;
+
+  /// Wording untuk subtotal
+  ///
+  /// In id, this message translates to:
+  /// **'Subtotal'**
+  String get subtotal;
+
+  /// Wording untuk checkout
+  ///
+  /// In id, this message translates to:
+  /// **'Lanjutkan ke Keranjang Belanja'**
+  String get checkout;
 }
 
 class _AppLocalizationsDelegate

@@ -41,6 +41,10 @@ class CustomTextTheme {
     color: CustomAppTheme.kSpaceCadet
   );
 
+  static var kAlertColorTextStyle = GoogleFonts.poppins(
+    color: CustomAppTheme.kAlertColor,
+  );
+
   static var light = FontWeight.w300;
   static var regular = FontWeight.w400;
   static var medium = FontWeight.w500;

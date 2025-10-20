@@ -213,4 +213,22 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get view_my_cart => 'Lihat Keranjang';
+
+  @override
+  String get cart_title => 'Keranjang Belanja';
+
+  @override
+  String get your_cart_empty => 'Maaf! Keranjang Belanja Anda Kosong.';
+
+  @override
+  String get count_cart => '2';
+
+  @override
+  String get remove => 'Hapus';
+
+  @override
+  String get subtotal => 'Subtotal';
+
+  @override
+  String get checkout => 'Lanjutkan ke Keranjang Belanja';
 }

@@ -13,4 +13,8 @@ class CustomAssets {
   static const kIconWishlistActive = 'assets/icons/ic_wishlist_active.svg';
   static const kIconWishlistNonActive = 'assets/icons/ic_wishlist_non_active.svg';
   static const kIconCheckList = 'assets/icons/ic_check_list.svg';
+  static const kIconEmptyCart = "assets/icons/ic_cart_empty.svg";
+  static const kIconAddCirclePrimary = "assets/icons/ic_add_circle_primary.svg";
+  static const kIconRemoveCirclePrimary = "assets/icons/ic_remove_circle_charcoal.svg";
+  static const kIconTrashRed = "assets/icons/ic_trash_red.svg";
 }

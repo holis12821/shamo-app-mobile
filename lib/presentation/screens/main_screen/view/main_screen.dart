@@ -63,7 +63,9 @@ class _MainScreenState extends State<MainScreen> {
 
   Widget cartButton() {
     return FloatingActionButton(
-      onPressed: () {},
+      onPressed: () {
+        Navigator.pushNamed(context, '/cart');
+      },
       shape: const CircleBorder(),
       elevation: CustomAppDimensions.kSize8,
       backgroundColor: CustomAppTheme.kSecondaryMainColor,

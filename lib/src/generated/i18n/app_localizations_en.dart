@@ -213,4 +213,22 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get view_my_cart => 'View My Cart';
+
+  @override
+  String get cart_title => 'Shopping Cart';
+
+  @override
+  String get your_cart_empty => 'Oops! Your Cart is Empty.';
+
+  @override
+  String get count_cart => '2';
+
+  @override
+  String get remove => 'Remove';
+
+  @override
+  String get subtotal => 'Subtotal';
+
+  @override
+  String get checkout => 'Continue to Checkout';
 }

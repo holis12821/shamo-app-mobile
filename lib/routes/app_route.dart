@@ -1,3 +1,4 @@
+import 'package:shamoapps/presentation/screens/cart_screen/view/cart_view.dart';
 import 'package:shamoapps/presentation/screens/detail_chat_screen/view/detail_chat_screen.dart';
 import 'package:shamoapps/presentation/screens/edit_profile_screen/view/edit_profile_screen.dart';
 import 'package:shamoapps/presentation/screens/main_screen/view/main_screen.dart';
@@ -13,5 +14,6 @@ class AppRoute {
     '/detail-chat': (context) => const DetailChatScreen(),
     '/edit-profile': (context) => const EditProfileScreen(),
     '/product': (context) => const ProductDetailScreen(),
+    '/cart': (context) => const CartView(),
   };
 }

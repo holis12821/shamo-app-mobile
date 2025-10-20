@@ -67,5 +67,11 @@
     "familiar_shoes": "Familiar Shoes",
     "wording_dialog_information": "Hooray :)",
     "item_added_successfully": "Item added successfully",
-    "view_my_cart": "View My Cart"
+    "view_my_cart": "View My Cart",
+    "cart_title": "Shopping Cart",
+    "your_cart_empty": "Oops! Your Cart is Empty.",
+    "count_cart": "2",
+    "remove": "Remove",
+    "subtotal": "Subtotal",
+    "checkout": "Continue to Checkout"
 }

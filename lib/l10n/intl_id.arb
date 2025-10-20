@@ -273,5 +273,29 @@
     "view_my_cart": "Lihat Keranjang",
     "@view_my_cart": {
         "description": "Wording untuk melihat keranjang"
+    },
+    "cart_title": "Keranjang Belanja",
+    "@cart_title": {
+        "description": "Wording untuk judul keranjang"
+    },
+    "your_cart_empty": "Maaf! Keranjang Belanja Anda Kosong.",
+    "@your_cart_empty": {
+        "description": "Wording untuk keranjang kosong"
+    },
+    "count_cart": "2",
+    "@count_cart": {
+        "description": "Wording untuk jumlah item di keranjang"
+    },
+    "remove": "Hapus",
+    "@remove": {
+        "description": "Wording untuk menghapus item"
+    },
+    "subtotal": "Subtotal",
+    "@subtotal": {
+        "description": "Wording untuk subtotal"
+    },
+    "checkout": "Lanjutkan ke Keranjang Belanja",
+    "@checkout": {
+        "description": "Wording untuk checkout"
     }
 }

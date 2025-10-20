@@ -23,4 +23,5 @@ class CustomAppTheme {
   static const kEmerald = Color(0xFF51C17E);
   static const kSpaceCadet = Color(0xFF2B2844);
   static const kSilver = Color(0xFFC4C4C4);
+  static const kCharcoal = Color(0xFF3F4251);
 }

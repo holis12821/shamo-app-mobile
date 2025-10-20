@@ -16,17 +16,20 @@ class WishListScreen extends StatelessWidget {
       appBar: headerWishList(context, localizations),
       backgroundColor: CustomAppTheme.kRaisinPrimaryColor,
       body: SafeArea(
-        child: Column(
-          children: [
-            // emptyWishList(localizations),
-            wishlistContent(),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              // emptyWishList(localizations),
+              wishlistContent(),
+            ],
+          ),
         ),
       ),
     );
   }
 
-  PreferredSizeWidget headerWishList(BuildContext context, AppLocalizations localizations) {
+  PreferredSizeWidget headerWishList(
+      BuildContext context, AppLocalizations localizations) {
     final screenHeight = MediaQuery.of(context).size.height;
     final headerHeight = screenHeight * (60 / screenHeight);
 
@@ -114,26 +117,25 @@ class WishListScreen extends StatelessWidget {
   }
 
   Widget wishlistContent() {
-    return Expanded(
-      child: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              CustomAppTheme.kRaisinBlackSecond,
-              CustomAppTheme.kRaisinPrimaryColor,
-            ],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
+    return Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            CustomAppTheme.kRaisinBlackSecond,
+            CustomAppTheme.kRaisinPrimaryColor,
+          ],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
         ),
-        child: ListView.builder(
-          padding: const EdgeInsets.all(
-            CustomAppDimensions.kSizeMediumSemiMedium,
-          ),
-          itemCount: 5,
-          itemBuilder: (context, index) => const WishlistCardWidget(),
-          shrinkWrap: true,
+      ),
+      child: ListView.builder(
+        physics: const NeverScrollableScrollPhysics(),
+        padding: const EdgeInsets.all(
+          CustomAppDimensions.kSizeMediumSemiMedium,
         ),
+        itemCount: 5,
+        itemBuilder: (context, index) => const WishlistCardWidget(),
+        shrinkWrap: true,
       ),
     );
   }
