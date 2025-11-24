@@ -81,7 +81,7 @@
     "@name": {
         "description": "Label untuk nama"
     },
-     "name_username": "Cth. Alex keinnzal",
+    "name_username": "Cth. Alex keinnzal",
     "@name_username": {
         "description": "Nama pengguna"
     },
@@ -197,7 +197,6 @@
     "@greetings_welcome_customer": {
         "description": "Sapaan untuk pelanggan"
     },
-    
     "account_wording": "Account",
     "@account_wording": {
         "description": "Wording untuk Akun"
@@ -297,5 +296,78 @@
     "checkout": "Lanjutkan ke Keranjang Belanja",
     "@checkout": {
         "description": "Wording untuk checkout"
+    },
+    "checkout_title": "Detail Checkout",
+    "@checkout_title": {
+        "description": "Wording untuk judul checkout"
+    },
+    "list_items": "Daftar Item",
+    "@list_items": {
+        "description": "Wording untuk daftar item"
+    },
+    "address_details": "Detail Alamat",
+    "@address_details": {
+        "description": "Wording untuk detail alamat"
+    },
+    "store_location": "Lokasi Toko",
+    "@store_location": {
+        "description": "Wording untuk lokasi toko"
+    },
+    "your_address": "Alamat Anda",
+    "@your_address": {
+        "description": "Wording untuk alamat anda"
+    },
+    "address_location": "Marsemoon",
+    "@address_location": {
+        "description": "Lokasi alamat"
+    },
+    "payment_summary": "Ringkasan Pembayaran",
+    "@payment_summary": {
+        "description": "Wording untuk ringkasan pembayaran"
+    },
+    "product_quantity": "Jumlah Produk",
+    "@product_quantity": {
+        "description": "Wording untuk jumlah produk"
+    },
+    "product_price": "Harga Produk",
+    "@product_price": {
+        "description": "Wording untuk harga produk"
+    },
+
+    "shipping": "Pengiriman",
+    "@shipping": {
+        "description": "Wording untuk pengiriman"
+    },
+    "free": "Gratis",
+    "@free": {
+        "description": "Wording untuk gratis"
+    },
+    "total": "Total",
+    "@total": {
+        "description": "Wording untuk total"
+    },
+    "checkout_now": "Checkout Sekarang",
+    "@checkout_now": {
+        "description": "Wording untuk tombol checkout sekarang"     
+    },
+    "checkout_success_title": "Checkout Berhasil",
+    "@checkout_success_title": {
+        "description": "Wording untuk judul checkout berhasil"      
+    },
+    "you_made_a_transaction": "Anda telah melakukan transaksi",
+    "@you_made_a_transaction": {
+        "description": "Wording untuk subtitle checkout berhasil"      
+    },
+    "stay_home_wait_for_the_item": "Tetap di rumah sementara kami\nmempersiapkan sepatu impian Anda",
+    "@stay_home_wait_for_the_item": {
+        "description": "Wording untuk pesan checkout berhasil"     
+    },
+    "order_other_items": "Pesan Sepatu Lain",
+    "@order_other_items": {
+        "description": "Wording untuk tombol pesan sepatu lain"
+    },
+    "view_my_orders": "Lihat Pesanan Saya",
+    "@view_my_orders": {
+        "description": "Wording untuk tombol lihat pesanan saya"
     }
 }

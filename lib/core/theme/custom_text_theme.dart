@@ -25,6 +25,10 @@ class CustomTextTheme {
     color: CustomAppTheme.kPrimaryColor 
   );
 
+  static var paleSlateTextStyle = GoogleFonts.poppins(
+    color: CustomAppTheme.kPaleSlate
+  );
+
   static var jetTextStyle = GoogleFonts.poppins(
     color: CustomAppTheme.kJet
   );

@@ -147,7 +147,7 @@ class ChatScreen extends StatelessWidget {
             return const Padding(
               padding: EdgeInsets.only(top: CustomAppDimensions.kSizeSmall),
               child: Divider(
-                thickness: 1,
+                thickness: CustomAppDimensions.kThicknessThin,
                 color: CustomAppTheme.kRaisinBlack,
               ),
             );

@@ -541,6 +541,114 @@ abstract class AppLocalizations {
   /// In id, this message translates to:
   /// **'Lanjutkan ke Keranjang Belanja'**
   String get checkout;
+
+  /// Wording untuk judul checkout
+  ///
+  /// In id, this message translates to:
+  /// **'Detail Checkout'**
+  String get checkout_title;
+
+  /// Wording untuk daftar item
+  ///
+  /// In id, this message translates to:
+  /// **'Daftar Item'**
+  String get list_items;
+
+  /// Wording untuk detail alamat
+  ///
+  /// In id, this message translates to:
+  /// **'Detail Alamat'**
+  String get address_details;
+
+  /// Wording untuk lokasi toko
+  ///
+  /// In id, this message translates to:
+  /// **'Lokasi Toko'**
+  String get store_location;
+
+  /// Wording untuk alamat anda
+  ///
+  /// In id, this message translates to:
+  /// **'Alamat Anda'**
+  String get your_address;
+
+  /// Lokasi alamat
+  ///
+  /// In id, this message translates to:
+  /// **'Marsemoon'**
+  String get address_location;
+
+  /// Wording untuk ringkasan pembayaran
+  ///
+  /// In id, this message translates to:
+  /// **'Ringkasan Pembayaran'**
+  String get payment_summary;
+
+  /// Wording untuk jumlah produk
+  ///
+  /// In id, this message translates to:
+  /// **'Jumlah Produk'**
+  String get product_quantity;
+
+  /// Wording untuk harga produk
+  ///
+  /// In id, this message translates to:
+  /// **'Harga Produk'**
+  String get product_price;
+
+  /// Wording untuk pengiriman
+  ///
+  /// In id, this message translates to:
+  /// **'Pengiriman'**
+  String get shipping;
+
+  /// Wording untuk gratis
+  ///
+  /// In id, this message translates to:
+  /// **'Gratis'**
+  String get free;
+
+  /// Wording untuk total
+  ///
+  /// In id, this message translates to:
+  /// **'Total'**
+  String get total;
+
+  /// Wording untuk tombol checkout sekarang
+  ///
+  /// In id, this message translates to:
+  /// **'Checkout Sekarang'**
+  String get checkout_now;
+
+  /// Wording untuk judul checkout berhasil
+  ///
+  /// In id, this message translates to:
+  /// **'Checkout Berhasil'**
+  String get checkout_success_title;
+
+  /// Wording untuk subtitle checkout berhasil
+  ///
+  /// In id, this message translates to:
+  /// **'Anda telah melakukan transaksi'**
+  String get you_made_a_transaction;
+
+  /// Wording untuk pesan checkout berhasil
+  ///
+  /// In id, this message translates to:
+  /// **'Tetap di rumah sementara kami\nmempersiapkan sepatu impian Anda'**
+  String get stay_home_wait_for_the_item;
+
+  /// Wording untuk tombol pesan sepatu lain
+  ///
+  /// In id, this message translates to:
+  /// **'Pesan Sepatu Lain'**
+  String get order_other_items;
+
+  /// Wording untuk tombol lihat pesanan saya
+  ///
+  /// In id, this message translates to:
+  /// **'Lihat Pesanan Saya'**
+  String get view_my_orders;
 }
 
 class _AppLocalizationsDelegate

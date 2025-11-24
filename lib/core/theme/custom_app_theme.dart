@@ -24,4 +24,9 @@ class CustomAppTheme {
   static const kSpaceCadet = Color(0xFF2B2844);
   static const kSilver = Color(0xFFC4C4C4);
   static const kCharcoal = Color(0xFF3F4251);
+  static const kSpaceCadetLight = Color(0xFF2E3142);
+  static const kTimberWolf = Color(0xFFD8D8D8);
+  static const kGunMetal = Color(0xFF2F3344);
+  static const kSpaceIndigo = Color(0xFF39374B);
+  static const kPaleSlate = Color(0xFFB7B6BF);
 }

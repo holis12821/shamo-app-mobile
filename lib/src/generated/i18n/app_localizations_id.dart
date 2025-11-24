@@ -231,4 +231,59 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get checkout => 'Lanjutkan ke Keranjang Belanja';
+
+  @override
+  String get checkout_title => 'Detail Checkout';
+
+  @override
+  String get list_items => 'Daftar Item';
+
+  @override
+  String get address_details => 'Detail Alamat';
+
+  @override
+  String get store_location => 'Lokasi Toko';
+
+  @override
+  String get your_address => 'Alamat Anda';
+
+  @override
+  String get address_location => 'Marsemoon';
+
+  @override
+  String get payment_summary => 'Ringkasan Pembayaran';
+
+  @override
+  String get product_quantity => 'Jumlah Produk';
+
+  @override
+  String get product_price => 'Harga Produk';
+
+  @override
+  String get shipping => 'Pengiriman';
+
+  @override
+  String get free => 'Gratis';
+
+  @override
+  String get total => 'Total';
+
+  @override
+  String get checkout_now => 'Checkout Sekarang';
+
+  @override
+  String get checkout_success_title => 'Checkout Berhasil';
+
+  @override
+  String get you_made_a_transaction => 'Anda telah melakukan transaksi';
+
+  @override
+  String get stay_home_wait_for_the_item =>
+      'Tetap di rumah sementara kami\nmempersiapkan sepatu impian Anda';
+
+  @override
+  String get order_other_items => 'Pesan Sepatu Lain';
+
+  @override
+  String get view_my_orders => 'Lihat Pesanan Saya';
 }

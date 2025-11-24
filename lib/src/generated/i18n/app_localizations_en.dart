@@ -231,4 +231,59 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get checkout => 'Continue to Checkout';
+
+  @override
+  String get checkout_title => 'Checkout Details';
+
+  @override
+  String get list_items => 'List Items';
+
+  @override
+  String get address_details => 'Address Details';
+
+  @override
+  String get store_location => 'Store Location';
+
+  @override
+  String get your_address => 'Your Address';
+
+  @override
+  String get address_location => 'Marsemoon';
+
+  @override
+  String get payment_summary => 'Payment Summary';
+
+  @override
+  String get product_quantity => 'Product Quantity';
+
+  @override
+  String get product_price => 'Product Price';
+
+  @override
+  String get shipping => 'Shipping';
+
+  @override
+  String get free => 'Free';
+
+  @override
+  String get total => 'Total';
+
+  @override
+  String get checkout_now => 'Checkout Now';
+
+  @override
+  String get checkout_success_title => 'Checkout Success';
+
+  @override
+  String get you_made_a_transaction => 'You made a transaction';
+
+  @override
+  String get stay_home_wait_for_the_item =>
+      'Stay at home while we\nprepare your dream shoes';
+
+  @override
+  String get order_other_items => 'Order Other Shoes';
+
+  @override
+  String get view_my_orders => 'View My Orders';
 }

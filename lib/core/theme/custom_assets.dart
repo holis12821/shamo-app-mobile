@@ -17,4 +17,8 @@ class CustomAssets {
   static const kIconAddCirclePrimary = "assets/icons/ic_add_circle_primary.svg";
   static const kIconRemoveCirclePrimary = "assets/icons/ic_remove_circle_charcoal.svg";
   static const kIconTrashRed = "assets/icons/ic_trash_red.svg";
+  static const kIconStoreLocation = "assets/icons/ic_store_location.svg";
+  static const kIconBuilding = "assets/icons/ic_building.svg"; 
+  static const kIconLocation = "assets/icons/ic_location.svg";
+  static const kIconCart = "assets/icons/ic_cart.svg";
 }

@@ -24,13 +24,12 @@ class CartView extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: contentCart(
-            heightWidget,
             context,
             localizations,
           ),
         ),
       ),
-      bottomNavigationBar: customBottomNav(localizations),
+      bottomNavigationBar: customBottomNav(context, localizations),
       resizeToAvoidBottomInset: false,
     );
   }
@@ -67,26 +66,26 @@ class CartView extends StatelessWidget {
   }
 
   Widget contentCart(
-      double height, BuildContext context, AppLocalizations localizations) {
-    return Expanded(
-      child: Container(
-        width: double.infinity,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.bottomCenter,
-            colors: [
-              CustomAppTheme.kRaisinBlackSecond,
-              CustomAppTheme.kRaisinPrimaryColor,
-            ],
-          ),
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(CustomAppDimensions.kSize30),
-            topRight: Radius.circular(CustomAppDimensions.kSize30),
-          ),
+    BuildContext context,
+    AppLocalizations localizations,
+  ) {
+    return Container(
+      width: double.infinity,
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topRight,
+          end: Alignment.bottomCenter,
+          colors: [
+            CustomAppTheme.kRaisinBlackSecond,
+            CustomAppTheme.kRaisinPrimaryColor,
+          ],
         ),
-        child: cartList(),
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(CustomAppDimensions.kSize30),
+          topRight: Radius.circular(CustomAppDimensions.kSize30),
+        ),
       ),
+      child: cartList(),
     );
   }
 
@@ -105,13 +104,11 @@ class CartView extends StatelessWidget {
     );
   }
 
-  Widget customBottomNav(AppLocalizations localizations) {
-    return Container(
-      margin: const EdgeInsets.only(
-        top: CustomAppDimensions.kSizeSuperSmall,
-      ),
+  Widget customBottomNav(BuildContext context, AppLocalizations localizations) {
+    return SizedBox(
       height: CustomAppDimensions.kSize180,
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
             margin: const EdgeInsets.symmetric(
@@ -145,12 +142,16 @@ class CartView extends StatelessWidget {
           Container(
             width: double.infinity,
             height: CustomAppDimensions.kSize50,
-            margin: const EdgeInsets.symmetric(
-              horizontal: CustomAppDimensions.kSize30,
-              vertical: CustomAppDimensions.kSizeSmall,
+            margin: const EdgeInsets.only(
+              top: CustomAppDimensions.kSizeSmall,
+              left: CustomAppDimensions.kSize30,
+              right: CustomAppDimensions.kSize30,
+              bottom: CustomAppDimensions.kSize30,
             ),
             child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/checkout');
+              },
               style: TextButton.styleFrom(
                 backgroundColor: CustomAppTheme.kPrimaryColor,
                 padding: const EdgeInsets.symmetric(

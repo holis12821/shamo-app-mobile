@@ -29,7 +29,10 @@ class CustomAppDimensions {
   static const kSize44 = 44.0;
   static const kSize45 = 45.0;
   static const kSize46 = 46.0;
+  static const kSize47 = 47.0;
+  static const kSize48 = 48.0;
   static const kSize100 = 100.0;
+  static const kSize192 = 192.0;
   static const kSize165 = 165.0;
   static const kSize180 = 180.0;
   static const kSize112 = 112.0;
@@ -39,6 +42,7 @@ class CustomAppDimensions {
   static const kSize246 = 264.0;
   static const kSize350 = 350.0;
   static const kSize502 = 502.0;
+  static const kSize28 = 28.0;
   static const kSizeSuperLarge = 24.0;
   static const kSizeMediumLarge = 22.0;
   static const kSizeMediumSemiMedium = 18.0;
@@ -67,4 +71,9 @@ class CustomAppDimensions {
 
   // Elevation size
   static const kElevationLow = 0.5;
+
+  static const kSizeOne = 1.0;
+
+  // Thickness size
+  static const kThicknessThin = 2.0;
 }
