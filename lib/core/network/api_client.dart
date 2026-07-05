@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:shamoapps/core/network/interceptors/auth_interceptor.dart';
 import 'package:shamoapps/core/network/interceptors/cart_interceptor.dart';
 import 'package:shamoapps/core/network/interceptors/host_interceptor.dart';
@@ -36,6 +37,15 @@ class ApiClient {
       HostInterceptor(),
       CartInterceptor(cartStorage: cartStorage),
       AuthInterceptor(refreshDio: refreshDio, tokenStorage: tokenStorage),
+      if (kDebugMode)
+        LogInterceptor(
+          request: true,
+          requestHeader: true,
+          requestBody: true,
+          responseHeader: true,
+          responseBody: true,
+          error: true,
+        ),
     ]);
 
     return dio;

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shamoapps/src/generated/i18n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:shamoapps/core/config/app_config.dart';
 import 'package:shamoapps/core/theme/custom_app_theme.dart';
 import 'package:shamoapps/core/di/service_locator.dart';
 import 'package:shamoapps/routes/app_route.dart';
@@ -8,6 +9,7 @@ import 'package:shamoapps/routes/app_route.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   setupServiceLocator();
+  debugPrint('BASE_URL=${AppConfig.baseUrl} USE_NGROK=${AppConfig.useNgrok}');
   runApp(const MyApp());
 }
 

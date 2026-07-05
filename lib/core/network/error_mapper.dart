@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:shamoapps/core/error/failures.dart';
 
 /// Central mapper from a Dio error to a typed [Failure].
@@ -22,8 +23,17 @@ Failure mapDioExceptionToFailure(DioException e) {
   final status = e.response?.statusCode;
   final body = e.response?.data;
 
-  // Shape #3: bare string body (500)
-  if (body is String) return const ServerFailure('Server error, please try again.');
+  // Shape #3: bare string body (500) or HTML error page (routing issue)
+  if (body is String) {
+    if (body.trimLeft().startsWith('<')) {
+      final snippet = body.length > 120 ? body.substring(0, 120) : body;
+      debugPrint('[ErrorMapper] Received HTML instead of JSON (status=$status): $snippet');
+      return const ServerFailure(
+        'Backend routing error: received an HTML page instead of JSON — check Host header / base URL config.',
+      );
+    }
+    return const ServerFailure('Server error, please try again.');
+  }
 
   if (body is Map<String, dynamic>) {
     final meta = body['meta'] as Map<String, dynamic>?;

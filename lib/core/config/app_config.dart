@@ -15,9 +15,11 @@ class AppConfig {
   );
 
   /// When true, the Host interceptor skips attaching `Host: shamoapps.test`.
+  /// Default matches the default [baseUrl] — when it is an ngrok URL, this
+  /// must be true so [HostInterceptor] does not send a conflicting Host header.
   static const useNgrok = bool.fromEnvironment(
     'API_USE_NGROK',
-    defaultValue: false,
+    defaultValue: true,
   );
 
   /// The Host header value Valet expects for routing.
