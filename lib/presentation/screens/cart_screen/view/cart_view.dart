@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shamoapps/core/theme/custom_app_dimensions.dart';
 import 'package:shamoapps/core/theme/custom_app_theme.dart';
 import 'package:shamoapps/core/theme/custom_assets.dart';
 import 'package:shamoapps/core/theme/custom_text_theme.dart';
+import 'package:shamoapps/presentation/screens/cart_screen/bloc/cart_bloc.dart';
 import 'package:shamoapps/presentation/screens/cart_screen/view/cart_item.dart';
 import 'package:shamoapps/src/generated/i18n/app_localizations.dart';
 
@@ -22,14 +24,39 @@ class CartView extends StatelessWidget {
       backgroundColor: CustomAppTheme.kRaisinPrimaryColor,
       appBar: headerCart(context, heightWidget, localizations),
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: contentCart(
-            context,
-            localizations,
-          ),
+        child: BlocBuilder<CartBloc, CartState>(
+          builder: (context, state) {
+            if (state is CartLoading) {
+              return const Center(child: CircularProgressIndicator());
+            }
+            if (state is CartError) {
+              return Center(
+                child: Text(
+                  state.message,
+                  style: CustomTextTheme.primaryTextStyle,
+                ),
+              );
+            }
+            if (state is CartEmpty) {
+              return emptyCart(context, localizations);
+            }
+            if (state is CartLoaded) {
+              return SingleChildScrollView(
+                child: contentCart(context, localizations, state),
+              );
+            }
+            return const SizedBox.shrink();
+          },
         ),
       ),
-      bottomNavigationBar: customBottomNav(context, localizations),
+      bottomNavigationBar: BlocBuilder<CartBloc, CartState>(
+        builder: (context, state) {
+          if (state is CartLoaded) {
+            return customBottomNav(context, localizations, state);
+          }
+          return const SizedBox.shrink();
+        },
+      ),
       resizeToAvoidBottomInset: false,
     );
   }
@@ -68,6 +95,7 @@ class CartView extends StatelessWidget {
   Widget contentCart(
     BuildContext context,
     AppLocalizations localizations,
+    CartLoaded state,
   ) {
     return Container(
       width: double.infinity,
@@ -85,26 +113,23 @@ class CartView extends StatelessWidget {
           topRight: Radius.circular(CustomAppDimensions.kSize30),
         ),
       ),
-      child: cartList(),
-    );
-  }
-
-  Widget cartList() {
-    return ListView.builder(
-      physics: const NeverScrollableScrollPhysics(),
-      padding: const EdgeInsets.all(
-        CustomAppDimensions.kSizeMediumSemiMedium,
+      child: ListView.builder(
+        physics: const NeverScrollableScrollPhysics(),
+        padding: const EdgeInsets.all(
+          CustomAppDimensions.kSizeMediumSemiMedium,
+        ),
+        itemCount: state.cart.items.length,
+        itemBuilder: (context, index) {
+          return const CartItem();
+        },
+        scrollDirection: Axis.vertical,
+        shrinkWrap: true,
       ),
-      itemCount: 5,
-      itemBuilder: (context, index) {
-        return const CartItem();
-      },
-      scrollDirection: Axis.vertical,
-      shrinkWrap: true,
     );
   }
 
-  Widget customBottomNav(BuildContext context, AppLocalizations localizations) {
+  Widget customBottomNav(
+      BuildContext context, AppLocalizations localizations, CartLoaded state) {
     return SizedBox(
       height: CustomAppDimensions.kSize180,
       child: Column(
@@ -126,7 +151,7 @@ class CartView extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  localizations.price_nominal,
+                  'Rp ${state.cart.totalPrice}',
                   style: CustomTextTheme.priceTextStyle.copyWith(
                     fontSize: CustomAppDimensions.kSizeLarge,
                     fontWeight: CustomTextTheme.semiBold,

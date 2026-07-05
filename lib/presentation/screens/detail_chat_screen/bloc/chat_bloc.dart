@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shamoapps/core/theme/custom_assets.dart';
 import 'package:shamoapps/domain/entity/chat.dart';
+import 'package:shamoapps/domain/entity/gallery.dart';
 import 'package:shamoapps/domain/entity/product.dart';
 import 'package:shamoapps/presentation/screens/detail_chat_screen/bloc/chat_event.dart';
 import 'package:shamoapps/presentation/screens/detail_chat_screen/bloc/chat_state.dart';
@@ -20,10 +20,11 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
   ) async {
     final newMessages = [
       Chat.product(
-        Product(
+        const Product(
+          id: 0,
           name: 'COURT VISION 2.0 SHOES',
-          imageUrl: CustomAssets.kShoesImage,
           price: 1000000,
+          galleries: [Gallery(id: 0, url: 'assets/images/shoes.png')],
         ),
         SenderType.sender,
       ),

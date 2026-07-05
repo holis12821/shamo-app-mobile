@@ -1,53 +1,103 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:shamoapps/core/di/service_locator.dart';
 import 'package:shamoapps/core/theme/custom_app_theme.dart';
 import 'package:shamoapps/core/theme/custom_app_dimensions.dart';
-import 'package:shamoapps/src/generated/i18n/app_localizations.dart';
 import 'package:shamoapps/core/theme/custom_text_theme.dart';
+import 'package:shamoapps/presentation/screens/sign_in_screen/bloc/sign_in_bloc.dart';
+import 'package:shamoapps/presentation/widgets/dialog_loading.dart';
+import 'package:shamoapps/src/generated/i18n/app_localizations.dart';
 
-class SignInScreen extends StatelessWidget {
+class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
 
-@override
-Widget build(BuildContext context) {
-  final localizations = AppLocalizations.of(context)!;
+  @override
+  State<SignInScreen> createState() => _SignInScreenState();
+}
 
-  return Scaffold(
-    resizeToAvoidBottomInset: true,
-    backgroundColor: CustomAppTheme.kRaisinPrimaryColor,
-    body: SafeArea(
-      child: Container(
-        margin: const EdgeInsets.symmetric(
-          horizontal: CustomAppDimensions.kSize30,
-        ),
-        child: Column(
-          children: [
-            Expanded(
-              child: SingleChildScrollView(
-                padding: const EdgeInsets.only(bottom: CustomAppDimensions.kSize20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    header(localizations.login),
-                   const SizedBox(height: CustomAppDimensions.kSizeSuperSmall),
-                    Text(
-                      localizations.sign_in_to_continue,
-                      style: CustomTextTheme.subtitleTextStyle,
-                    ),
-                    inputEmailFormComponent(localizations),
-                    inputPasswordFormComponent(localizations),
-                    signInButton(context, localizations.txt_sign_in),
-                  ],
+class _SignInScreenState extends State<SignInScreen> {
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
+
+    return BlocProvider(
+      create: (_) => sl<SignInBloc>(),
+      child: BlocListener<SignInBloc, SignInState>(
+        listener: (context, state) {
+          if (state is SignInLoading) {
+            DialogLoading.show(context);
+          } else if (DialogLoading.isLoading) {
+            DialogLoading.hide(context);
+          }
+
+          if (state is SignInSuccess) {
+            Navigator.pushNamedAndRemoveUntil(
+                context, '/home', (route) => false);
+          } else if (state is SignInError) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(
+                  state.message,
+                  style: CustomTextTheme.primaryTextStyle.copyWith(
+                    fontSize: CustomAppDimensions.kSizeMedium,
+                  ),
                 ),
+                backgroundColor: CustomAppTheme.kAlertColor,
+              ),
+            );
+          }
+        },
+        child: Scaffold(
+          resizeToAvoidBottomInset: true,
+          backgroundColor: CustomAppTheme.kRaisinPrimaryColor,
+          body: SafeArea(
+            child: Container(
+              margin: const EdgeInsets.symmetric(
+                horizontal: CustomAppDimensions.kSize30,
+              ),
+              child: Column(
+                children: [
+                  Expanded(
+                    child: SingleChildScrollView(
+                      padding: const EdgeInsets.only(
+                          bottom: CustomAppDimensions.kSize20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          header(localizations.login),
+                          const SizedBox(
+                              height: CustomAppDimensions.kSizeSuperSmall),
+                          Text(
+                            localizations.sign_in_to_continue,
+                            style: CustomTextTheme.subtitleTextStyle,
+                          ),
+                          inputEmailFormComponent(localizations),
+                          inputPasswordFormComponent(localizations),
+                          signInButton(context, localizations.txt_sign_in),
+                        ],
+                      ),
+                    ),
+                  ),
+                  footer(context, localizations),
+                ],
               ),
             ),
-            footer(context, localizations), // Always appears, but can scroll when landscape
-          ],
+          ),
         ),
       ),
-    ),
-  );
-}
+    );
+  }
 
   Widget header(String title) {
     return Container(
@@ -104,9 +154,7 @@ Widget build(BuildContext context) {
               fontWeight: CustomTextTheme.medium,
             ),
           ),
-          const SizedBox(
-            height: CustomAppDimensions.kSizeSmall,
-          ),
+          const SizedBox(height: CustomAppDimensions.kSizeSmall),
           Container(
             height: CustomAppDimensions.kSize50,
             padding: const EdgeInsets.symmetric(
@@ -127,12 +175,14 @@ Widget build(BuildContext context) {
                   const SizedBox(width: CustomAppDimensions.kSizeLarge),
                   Expanded(
                     child: TextFormField(
+                      controller: _emailController,
                       style: CustomTextTheme.primaryTextStyle,
                       autovalidateMode: AutovalidateMode.onUserInteraction,
                       decoration: InputDecoration.collapsed(
                         hintText: localizations.hint_email_address,
                         hintStyle: CustomTextTheme.subtitleTextStyle,
                       ),
+                      cursorColor: CustomAppTheme.kGhostWhite,
                     ),
                   ),
                 ],
@@ -157,13 +207,11 @@ Widget build(BuildContext context) {
               fontWeight: CustomTextTheme.medium,
             ),
           ),
-          const SizedBox(
-            height: CustomAppDimensions.kSizeSmall,
-          ),
+          const SizedBox(height: CustomAppDimensions.kSizeSmall),
           Container(
             height: CustomAppDimensions.kSize50,
-            padding:
-                const EdgeInsets.symmetric(horizontal: CustomAppDimensions.kSizeLarge),
+            padding: const EdgeInsets.symmetric(
+                horizontal: CustomAppDimensions.kSizeLarge),
             decoration: BoxDecoration(
               color: CustomAppTheme.kRaisinBlack,
               borderRadius:
@@ -179,6 +227,7 @@ Widget build(BuildContext context) {
                   const SizedBox(width: CustomAppDimensions.kSizeLarge),
                   Expanded(
                     child: TextFormField(
+                      controller: _passwordController,
                       style: CustomTextTheme.primaryTextStyle,
                       autovalidateMode: AutovalidateMode.onUserInteraction,
                       obscureText: true,
@@ -186,12 +235,13 @@ Widget build(BuildContext context) {
                         hintText: localizations.hint_password,
                         hintStyle: CustomTextTheme.subtitleTextStyle,
                       ),
+                      cursorColor: CustomAppTheme.kGhostWhite,
                     ),
                   ),
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );
@@ -204,21 +254,27 @@ Widget build(BuildContext context) {
       margin: const EdgeInsets.only(
         top: CustomAppDimensions.kSize30,
       ),
-      child: TextButton(
-        onPressed: () {
-          Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
-        },
-        style: TextButton.styleFrom(
-          backgroundColor: CustomAppTheme.kPrimaryColor,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(CustomAppDimensions.kSizeSmall),
+      child: Builder(
+        builder: (ctx) => TextButton(
+          onPressed: () {
+            ctx.read<SignInBloc>().add(SignInSubmitted(
+                  email: _emailController.text,
+                  password: _passwordController.text,
+                ));
+          },
+          style: TextButton.styleFrom(
+            backgroundColor: CustomAppTheme.kPrimaryColor,
+            shape: RoundedRectangleBorder(
+              borderRadius:
+                  BorderRadius.circular(CustomAppDimensions.kSizeSmall),
+            ),
           ),
-        ),
-        child: Text(
-          textButton,
-          style: CustomTextTheme.primaryTextStyle.copyWith(
-              fontSize: CustomAppDimensions.kSizeLarge,
-              fontWeight: CustomTextTheme.medium),
+          child: Text(
+            textButton,
+            style: CustomTextTheme.primaryTextStyle.copyWith(
+                fontSize: CustomAppDimensions.kSizeLarge,
+                fontWeight: CustomTextTheme.medium),
+          ),
         ),
       ),
     );

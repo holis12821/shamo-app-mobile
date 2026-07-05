@@ -105,10 +105,10 @@ class _EditProfileViewState extends State<EditProfileView> {
           }
 
           if (state is EditProfileLoaded) {
-            nameController.text = state.user.name ?? '';
-            usernameController.text = state.user.username ?? '';
-            emailController.text = state.user.email ?? '';
-            phoneController.text = state.user.phone ?? '';
+            nameController.text = state.user.name;
+            usernameController.text = state.user.username;
+            emailController.text = state.user.email;
+            phoneController.text = state.user.phone;
           } else if (state is EditProfileSubmitSuccess) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(

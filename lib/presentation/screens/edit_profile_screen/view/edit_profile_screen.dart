@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shamoapps/domain/entity/User.dart';
-import 'package:shamoapps/helper/utils/id_generator.dart';
+import 'package:shamoapps/core/di/service_locator.dart';
+import 'package:shamoapps/domain/entity/user.dart';
+import 'package:shamoapps/domain/usecase/update_user.dart';
 import 'package:shamoapps/presentation/screens/edit_profile_screen/bloc/edit_profile_bloc.dart';
 import 'package:shamoapps/presentation/screens/edit_profile_screen/view/edit_profile_view.dart';
 
@@ -11,15 +12,15 @@ class EditProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => EditProfileBloc()
+      create: (context) => EditProfileBloc(updateUser: sl<UpdateUser>())
         ..add(
           EditProfileGetUser(
-            User(
-              id: IdGenerator.generateUserId(),
+            const User(
+              id: 0,
               name: 'John Doe',
               email: 'johndoe@example.com',
-              phone: '08123456789',
               username: 'johndoe',
+              phone: '08123456789',
             ),
           ),
         ),

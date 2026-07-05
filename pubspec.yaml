@@ -60,6 +60,15 @@ dependencies:
   carousel_slider: ^5.1.1
   dotted_line: ^3.2.3
 
+  # Networking
+  dio: ^5.4.0
+  # Functional either/option types
+  dartz: ^0.10.1
+  # Secure storage for tokens and cart session
+  flutter_secure_storage: ^9.2.2
+  # Dependency injection
+  get_it: ^7.6.7
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

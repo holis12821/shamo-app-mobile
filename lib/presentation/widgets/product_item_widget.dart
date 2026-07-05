@@ -20,7 +20,7 @@ class ProductItemWidget extends StatelessWidget {
   final SenderType? sender;
   final String? productName;
   final String? imageUrl;
-  final double? price;
+  final num? price;
   final VoidCallback? addToCart;
   final VoidCallback? onBuyNow;
 

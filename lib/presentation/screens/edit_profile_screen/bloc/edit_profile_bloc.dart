@@ -2,19 +2,22 @@ import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:shamoapps/domain/entity/User.dart';
+import 'package:shamoapps/domain/entity/user.dart';
+import 'package:shamoapps/domain/usecase/update_user.dart';
 import 'package:bloc_concurrency/bloc_concurrency.dart';
 
 part 'edit_profile_event.dart';
 part 'edit_profile_state.dart';
 
 class EditProfileBloc extends Bloc<EditProfileEvent, EditProfileState> {
+  final UpdateUser updateUser;
+
   var _name = '';
   var _username = '';
   var _email = '';
   var _phone = '';
 
-  EditProfileBloc() : super(EditProfileInitial()) {
+  EditProfileBloc({required this.updateUser}) : super(EditProfileInitial()) {
     on<EditProfileNameChanged>(_onEditProfileNameChanged);
 
     on<EditProfileUsernameChanged>(_onEditProfileUsernameChanged);
@@ -25,14 +28,14 @@ class EditProfileBloc extends Bloc<EditProfileEvent, EditProfileState> {
 
     on<EditProfileGetUser>(_onEditProfileGetUUser);
 
-    on<EditProfileSubmitPressed>(_onEditProfileSubmitPressed, transformer: droppable());
+    on<EditProfileSubmitPressed>(_onEditProfileSubmitPressed,
+        transformer: droppable());
   }
 
   Future<void> _onEditProfileNameChanged(
     EditProfileNameChanged event,
     Emitter<EditProfileState> emit,
   ) async {
-    // Logic to handle name change
     _name = event.name;
     _validateForm(emit);
   }
@@ -41,7 +44,6 @@ class EditProfileBloc extends Bloc<EditProfileEvent, EditProfileState> {
     EditProfileUsernameChanged event,
     Emitter<EditProfileState> emit,
   ) async {
-    // Logic to handle username change
     _username = event.username;
     _validateForm(emit);
   }
@@ -50,7 +52,6 @@ class EditProfileBloc extends Bloc<EditProfileEvent, EditProfileState> {
     EditProfileEmailChanged event,
     Emitter<EditProfileState> emit,
   ) async {
-    // Logic to handle email change
     _email = event.email;
     _validateForm(emit);
   }
@@ -59,7 +60,6 @@ class EditProfileBloc extends Bloc<EditProfileEvent, EditProfileState> {
     EditProfilePhoneChanged event,
     Emitter<EditProfileState> emit,
   ) async {
-    // Logic to handle phone change
     _phone = event.phone;
     _validateForm(emit);
   }
@@ -68,21 +68,21 @@ class EditProfileBloc extends Bloc<EditProfileEvent, EditProfileState> {
     EditProfileGetUser event,
     Emitter<EditProfileState> emit,
   ) async {
-    // Logic to handle fetching user data
-    _name = event.user.name ?? '';
-    _username = event.user.username ?? '';
-    _email = event.user.email ?? '';
-    _phone = event.user.phone ?? '';
-    
+    _name = event.user.name;
+    _username = event.user.username;
+    _email = event.user.email;
+    _phone = event.user.phone;
+
     emit(EditProfileLoading());
 
     await Future.delayed(const Duration(seconds: 1));
 
     emit(EditProfileLoaded(
       user: User(
+        id: event.user.id,
         name: _name,
-        username: _username,
         email: _email,
+        username: _username,
         phone: _phone,
       ),
     ));
@@ -92,7 +92,6 @@ class EditProfileBloc extends Bloc<EditProfileEvent, EditProfileState> {
     EditProfileSubmitPressed event,
     Emitter<EditProfileState> emit,
   ) async {
-    // Logic to handle form submission
     final validation = _getValidationErrors();
 
     if (!validation.isValid) {
@@ -108,20 +107,21 @@ class EditProfileBloc extends Bloc<EditProfileEvent, EditProfileState> {
 
     emit(EditProfileLoading());
 
-    try {
-      // Simulate a network call or data submission
-      await Future.delayed(const Duration(seconds: 1));
+    final result = await updateUser(UpdateUserParams(
+      name: _name,
+      email: _email,
+      username: _username,
+    ));
 
-      // Assuming the submission is successful
-      emit(EditProfileSubmitSuccess(message: 'Profile updated successfully'));
-    } catch (_) {
-      emit(EditProfileFailed(message: 'Failed to update profile'));
-    }
+    result.fold(
+      (failure) => emit(EditProfileFailed(message: failure.message)),
+      (user) => emit(EditProfileSubmitSuccess(message: 'Profile updated successfully')),
+    );
   }
 
   void _validateForm(Emitter<EditProfileState> emit) {
     final validation = _getValidationErrors();
-    
+
     emit(EditProfileFormValidation(
       nameError: validation.nameError,
       usernameError: validation.usernameError,
@@ -162,22 +162,22 @@ class EditProfileBloc extends Bloc<EditProfileEvent, EditProfileState> {
   }
 }
 
- class _ValidationResult {
-   final String? nameError;
-   final String? usernameError;
-   final String? emailError;
-   final String? phoneError;
+class _ValidationResult {
+  final String? nameError;
+  final String? usernameError;
+  final String? emailError;
+  final String? phoneError;
 
-   bool get isValid =>
-       nameError == null &&
-       usernameError == null &&
-       emailError == null &&
-       phoneError == null;
+  bool get isValid =>
+      nameError == null &&
+      usernameError == null &&
+      emailError == null &&
+      phoneError == null;
 
-   _ValidationResult({
-     this.nameError,
-     this.usernameError,
-     this.emailError,
-     this.phoneError,
-   });
- }
+  _ValidationResult({
+    this.nameError,
+    this.usernameError,
+    this.emailError,
+    this.phoneError,
+  });
+}

@@ -1,5 +1,5 @@
-import 'package:shamoapps/presentation/screens/cart_screen/view/cart_view.dart';
-import 'package:shamoapps/presentation/screens/checkout_screen/view/checkout_view.dart';
+import 'package:shamoapps/presentation/screens/cart_screen/view/cart_screen.dart';
+import 'package:shamoapps/presentation/screens/checkout_screen/view/checkout_screen.dart';
 import 'package:shamoapps/presentation/screens/checkout_success_screen/view/checkout_success_view.dart';
 import 'package:shamoapps/presentation/screens/detail_chat_screen/view/detail_chat_screen.dart';
 import 'package:shamoapps/presentation/screens/edit_profile_screen/view/edit_profile_screen.dart';
@@ -16,11 +16,8 @@ class AppRoute {
     '/detail-chat': (context) => const DetailChatScreen(),
     '/edit-profile': (context) => const EditProfileScreen(),
     '/product': (context) => const ProductDetailScreen(),
-    // Change later to CartScreen
-    '/cart': (context) => const CartView(),
-    // Change later to CheckoutScreen
-    '/checkout': (context) => const CheckoutView(),
-    // Change later to CheckoutSuccessScreen
-    "/checkout-success": (context) => const CheckoutSuccessView(),
+    '/cart': (context) => const CartScreen(),
+    '/checkout': (context) => const CheckoutScreen(),
+    '/checkout-success': (context) => const CheckoutSuccessView(),
   };
 }

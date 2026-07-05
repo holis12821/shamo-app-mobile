@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shamoapps/core/theme/custom_app_dimensions.dart';
 import 'package:shamoapps/core/theme/custom_app_theme.dart';
 import 'package:shamoapps/core/theme/custom_text_theme.dart';
+import 'package:shamoapps/presentation/screens/checkout_screen/bloc/checkout_bloc.dart';
 import 'package:shamoapps/presentation/widgets/address_detail_widget.dart';
 import 'package:shamoapps/presentation/widgets/checkout_card.dart';
+import 'package:shamoapps/presentation/widgets/dialog_loading.dart';
 import 'package:shamoapps/presentation/widgets/payment_summary_widget.dart';
 import 'package:shamoapps/src/generated/i18n/app_localizations.dart';
 
@@ -17,17 +20,43 @@ class CheckoutView extends StatelessWidget {
     final screenHeight = MediaQuery.of(context).size.height;
     final heightWidget = screenHeight * (60 / screenHeight);
 
-    return Scaffold(
-      extendBodyBehindAppBar: false,
-      backgroundColor: CustomAppTheme.kRaisinPrimaryColor,
-      appBar: buildAppBar(context, heightWidget, localizations),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: contentBody(context, localizations),
+    return BlocListener<CheckoutBloc, CheckoutState>(
+      listener: (context, state) {
+        if (state is CheckoutLoading) {
+          DialogLoading.show(context);
+        } else if (DialogLoading.isLoading) {
+          DialogLoading.hide(context);
+        }
+
+        if (state is CheckoutSuccess) {
+          Navigator.pushNamedAndRemoveUntil(
+              context, '/checkout-success', (route) => false);
+        } else if (state is CheckoutError) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(
+                state.message,
+                style: CustomTextTheme.primaryTextStyle.copyWith(
+                  fontSize: CustomAppDimensions.kSizeMedium,
+                ),
+              ),
+              backgroundColor: CustomAppTheme.kAlertColor,
+            ),
+          );
+        }
+      },
+      child: Scaffold(
+        extendBodyBehindAppBar: false,
+        backgroundColor: CustomAppTheme.kRaisinPrimaryColor,
+        appBar: buildAppBar(context, heightWidget, localizations),
+        body: SafeArea(
+          child: SingleChildScrollView(
+            child: contentBody(context, localizations),
+          ),
         ),
+        resizeToAvoidBottomInset: false,
+        bottomNavigationBar: customBottomNav(context, localizations),
       ),
-      resizeToAvoidBottomInset: false,
-      bottomNavigationBar: customBottomNav(context, localizations),
     );
   }
 
@@ -162,7 +191,9 @@ class CheckoutView extends StatelessWidget {
                 ),
               ),
               onPressed: () {
-                Navigator.pushNamedAndRemoveUntil(context, "/checkout-success", (route) => false);
+                context.read<CheckoutBloc>().add(
+                      const CheckoutSubmit(address: 'Default Address'),
+                    );
               },
               child: Text(
                 localizations.checkout_now,

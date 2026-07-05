@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:shamoapps/core/di/service_locator.dart';
 import 'package:shamoapps/core/theme/custom_app_dimensions.dart';
 import 'package:shamoapps/core/theme/custom_app_theme.dart';
 import 'package:shamoapps/core/theme/custom_text_theme.dart';
+import 'package:shamoapps/presentation/screens/profile_screen/bloc/profile_bloc.dart';
 import 'package:shamoapps/src/generated/i18n/app_localizations.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -10,16 +13,42 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (_) => sl<ProfileBloc>()..add(const ProfileLoadUser()),
+      child: const _ProfileView(),
+    );
+  }
+}
+
+class _ProfileView extends StatelessWidget {
+  const _ProfileView();
+
+  @override
+  Widget build(BuildContext context) {
     final localizations = AppLocalizations.of(context)!;
 
-    return Scaffold(
-      appBar: headerProfile(context),
-      backgroundColor: CustomAppTheme.kRaisinPrimaryColor,
-      body: SafeArea(
-        child: Column(
-          children: [
-            contentProfile(context, localizations),
-          ],
+    return BlocListener<ProfileBloc, ProfileState>(
+      listener: (context, state) {
+        if (state is ProfileLoggedOut) {
+          Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
+        } else if (state is ProfileError) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(state.message),
+              backgroundColor: CustomAppTheme.kAlertColor,
+            ),
+          );
+        }
+      },
+      child: Scaffold(
+        appBar: headerProfile(context),
+        backgroundColor: CustomAppTheme.kRaisinPrimaryColor,
+        body: SafeArea(
+          child: Column(
+            children: [
+              contentProfile(context, localizations),
+            ],
+          ),
         ),
       ),
     );
@@ -50,26 +79,39 @@ class ProfileScreen extends StatelessWidget {
             ),
             const SizedBox(width: CustomAppDimensions.kSizeLarge),
             Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Hallo, Alex',
-                    style: CustomTextTheme.primaryTextStyle.copyWith(
-                        fontSize: CustomAppDimensions.kSizeSuperLarge,
-                        fontWeight: CustomTextTheme.semiBold,
-                        overflow: TextOverflow.ellipsis),
-                    maxLines: 2,
-                  ),
-                  const SizedBox(height: CustomAppDimensions.kSize6),
-                  Text(
-                    'Software Engineer',
-                    style: CustomTextTheme.subtitleTextStyle.copyWith(
-                      fontSize: CustomAppDimensions.kSizeLarge,
-                      fontWeight: CustomTextTheme.regular,
-                    ),
-                  ),
-                ],
+              child: BlocBuilder<ProfileBloc, ProfileState>(
+                buildWhen: (prev, curr) =>
+                    curr is ProfileLoaded || curr is ProfileLoading,
+                builder: (context, state) {
+                  final name = state is ProfileLoaded
+                      ? state.user.name
+                      : '...';
+                  final email = state is ProfileLoaded
+                      ? state.user.email
+                      : '';
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Hallo, $name',
+                        style: CustomTextTheme.primaryTextStyle.copyWith(
+                            fontSize: CustomAppDimensions.kSizeSuperLarge,
+                            fontWeight: CustomTextTheme.semiBold,
+                            overflow: TextOverflow.ellipsis),
+                        maxLines: 2,
+                      ),
+                      const SizedBox(
+                          height: CustomAppDimensions.kSize6),
+                      Text(
+                        email,
+                        style: CustomTextTheme.subtitleTextStyle.copyWith(
+                          fontSize: CustomAppDimensions.kSizeLarge,
+                          fontWeight: CustomTextTheme.regular,
+                        ),
+                      ),
+                    ],
+                  );
+                },
               ),
             ),
             IconButton(
@@ -78,8 +120,9 @@ class ProfileScreen extends StatelessWidget {
                 width: CustomAppDimensions.kSize20,
               ),
               onPressed: () {
-                Navigator.pushNamedAndRemoveUntil(
-                    context, '/', (route) => false);
+                context
+                    .read<ProfileBloc>()
+                    .add(const ProfileLogoutRequested());
               },
             ),
           ],

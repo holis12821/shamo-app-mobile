@@ -147,5 +147,6 @@
         "Umum",
         "untuk",
         "Waktu"
-    ]
+    ],
+    "java.configuration.updateBuildConfiguration": "interactive"
 }

@@ -1,18 +1,22 @@
 import 'package:equatable/equatable.dart';
 
 class User extends Equatable {
-  final String? id;
-  final String? name;
-  final String? email;
-  final String? phone;
-  final String? username;
+  final int id;
+  final String name;
+  final String email;
+  final String username;
+  final String phone;
+  final String roles;
+  final String profilePhotoUrl;
 
   const User({
-    this.id,
-    this.name,
-    this.email,
-    this.phone,
-    this.username,
+    required this.id,
+    required this.name,
+    required this.email,
+    required this.username,
+    this.phone = '',
+    this.roles = '',
+    this.profilePhotoUrl = '',
   });
 
   @override
@@ -20,7 +24,9 @@ class User extends Equatable {
         id,
         name,
         email,
-        phone,
         username,
+        phone,
+        roles,
+        profilePhotoUrl,
       ];
 }
